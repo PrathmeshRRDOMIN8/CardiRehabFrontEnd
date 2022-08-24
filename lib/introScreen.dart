@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kmc_medical_app/adminLgin.dart';
-import 'package:kmc_medical_app/loginpatient.dart';
+import 'package:kmc_medical_app/UI/Admin/adminLgin.dart';
+import 'package:kmc_medical_app/UI/Patient/loginpatient.dart';
 import 'package:lottie/lottie.dart';
 import 'package:kmc_medical_app/patientPortal.dart';
 

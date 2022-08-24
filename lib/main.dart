@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kmc_medical_app/introScreen.dart';
 import 'package:kmc_medical_app/patientPortal.dart';
-import 'package:kmc_medical_app/detailsdivision.dart';
-import 'package:kmc_medical_app/listOfCardiacRehab.dart';
-import 'package:kmc_medical_app/pushQuizPage.dart';
+import 'package:kmc_medical_app/UI/Patient/detailsdivision.dart';
+import 'package:kmc_medical_app/UI/Patient/listOfCardiacRehab.dart';
+import 'package:kmc_medical_app/UI/Patient/pushQuizPage.dart';
 import 'package:kmc_medical_app/Cardiac/careOfInciRite.dart';
 import 'package:kmc_medical_app/Cardiac/woundCare.dart';
 import 'package:kmc_medical_app/Cardiac/bathing.dart';

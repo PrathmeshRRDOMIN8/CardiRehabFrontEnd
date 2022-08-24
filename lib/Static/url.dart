@@ -1,2 +1,2 @@
-String PROD_URL="http://localhost:8000";
+String PROD_URL="https://cardi-rehab-backend.herokuapp.com";
 
