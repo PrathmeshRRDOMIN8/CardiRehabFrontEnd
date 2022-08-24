@@ -1,4 +1,4 @@
-#Wed Aug 24 19:06:50 IST 2022
-base.0=/Users/Prathmesh/AndroidStudioProjects/kmc_Medical_App/FRONTEND/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Wed Aug 24 22:43:33 IST 2022
+base.0=/Users/ankitmishra/CardiRehabFrontEnd/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

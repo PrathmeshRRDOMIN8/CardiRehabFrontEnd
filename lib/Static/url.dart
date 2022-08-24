@@ -1,2 +1,2 @@
-String PROD_URL="https://cardi-rehab-backend.herokuapp.com";
+const PROD_URL="https://cardi-rehab-backend.herokuapp.com";
 

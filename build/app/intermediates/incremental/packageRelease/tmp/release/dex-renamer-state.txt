@@ -1,0 +1,4 @@
+#Wed Aug 24 23:07:12 IST 2022
+base.0=/Users/ankitmishra/CardiRehabFrontEnd/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
