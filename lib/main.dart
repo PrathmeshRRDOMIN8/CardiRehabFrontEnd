@@ -31,92 +31,33 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String dropdownvalue1 = HomePage.id;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: IntroScreen.id,
       routes: {
-        MyApp.id: (context) => MyApp(),
-        IntroScreen.id: (context) => IntroScreen(dropdownvalue1),
+        IntroScreen.id: (context) => IntroScreen(),
         // DetailDivision.id : (context) => DetailDivision(),
-        ListRehab.id: (context) => ListRehab(dropdownvalue1),
+        ListRehab.id: (context) => ListRehab(),
         // PushQuizPage.id : (context) => PushQuizPage(),
-        CareOfInciRite.id: (context) => CareOfInciRite(dropdownvalue1),
-        WoundCare.id: (context) => WoundCare(dropdownvalue1),
-        Bathing.id: (context) => Bathing(dropdownvalue1),
-        PhysicalActivity.id: (context) => PhysicalActivity(dropdownvalue1),
-        Rest.id: (context) => Rest(dropdownvalue1),
-        StairsClimbing.id: (context) => StairsClimbing(dropdownvalue1),
-        Posture.id: (context) => Posture(dropdownvalue1),
-        Medications.id: (context) => Medications(dropdownvalue1),
-        Exercise.id: (context) => Exercise(dropdownvalue1),
-        DietForCABG.id: (context) => DietForCABG(dropdownvalue1),
-        Smoking.id: (context) => Smoking(dropdownvalue1),
-        ControlBloodPressure.id: (context) => ControlBloodPressure(dropdownvalue1),
-        ControllingCholesterol.id: (context) => ControllingCholesterol(dropdownvalue1),
-        BloodSugarLevel.id: (context) => BloodSugarLevel(dropdownvalue1),
-        PsychologicalCare.id: (context) => PsychologicalCare(dropdownvalue1),
+        CareOfInciRite.id: (context) => CareOfInciRite(),
+        WoundCare.id: (context) => WoundCare(),
+        Bathing.id: (context) => Bathing(),
+        PhysicalActivity.id: (context) => PhysicalActivity(),
+        Rest.id: (context) => Rest(),
+        StairsClimbing.id: (context) => StairsClimbing(),
+        Posture.id: (context) => Posture(),
+        Medications.id: (context) => Medications(),
+        Exercise.id: (context) => Exercise(),
+        DietForCABG.id: (context) => DietForCABG(),
+        Smoking.id: (context) => Smoking(),
+        ControlBloodPressure.id: (context) => ControlBloodPressure(),
+        ControllingCholesterol.id: (context) => ControllingCholesterol(),
+        BloodSugarLevel.id: (context) => BloodSugarLevel(),
+        PsychologicalCare.id: (context) => PsychologicalCare(),
       },
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  static String id = 'HomePage';
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-
-class _HomePageState extends State<HomePage> {
-  String dropdownvalue1 = 'English';
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Container(
-              margin: EdgeInsets.symmetric(vertical: 10),
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              width: size.width * 0.8,
-              decoration: BoxDecoration(
-                color: Color(0xFFCA6CE5),
-                borderRadius: BorderRadius.circular(29),
-              ),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, IntroScreen.id,
-                      arguments: dropdownvalue1);
-                },
-                child: DropdownButton(
-                    style: const TextStyle(color: Colors.black),
-                    value: dropdownvalue1,
-                    items: <String>[
-                      'English',
-                      'ಕನ್ನಡ',
-                    ].map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        dropdownvalue1 = newValue!;
-                        HomePage.id = dropdownvalue1;
-                      });
-                    }),
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

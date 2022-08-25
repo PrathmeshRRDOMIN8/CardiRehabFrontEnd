@@ -1,21 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class StairsClimbing extends StatefulWidget {
   static const String id = 'Stairs climbing';
-  StairsClimbing(@required this.lang);
-  final String lang;
+
 
   @override
   State<StairsClimbing> createState() => _StairsClimbingState();
 }
 
 class _StairsClimbingState extends State<StairsClimbing> {
+  bool language=true;
+
+  void initState(){
+    super.initState();
+    language;
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    late String language = widget.lang;
     return Scaffold(
       backgroundColor: Colors.black,
+      floatingActionButton: SpeedDial(
+        icon: Icons.language,
+        // animatedIcon: AnimatedIcons.menu_close,
+        backgroundColor: Colors.black,
+        children: [
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'English',
+              onTap: (){
+                setState(() {
+                  language = true;
+                });}
+          ),
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'Kannada',
+              onTap: (){
+                setState(() {
+                  language = false;
+                });
+                // print(language);
+              }
+          ),
+        ],
+      ) ,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -47,7 +77,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(),
-                                        child: Text(language == 'English' ? 'STAIRS CLIMBING' : 'ಮೆಟ್ಟಿಲುಗಳನ್ನು ಹತ್ತುವುದು',
+                                        child: Text(language? 'STAIRS CLIMBING' : 'ಮೆಟ್ಟಿಲುಗಳನ್ನು ಹತ್ತುವುದು',
                                           style: TextStyle(
                                             decoration: TextDecoration.underline,
                                             color: Color(0xFFFFBD58),
@@ -73,7 +103,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01, top: size.height*0.001),
                                       child:
-                                          Text(language == 'English' ? '• You may climb stairs. ':'• ನೀವು ಮೆಟ್ಟಿಲುಗಳನ್ನು ಹತ್ತಬಹುದು.',
+                                          Text(language? '• You may climb stairs. ':'• ನೀವು ಮೆಟ್ಟಿಲುಗಳನ್ನು ಹತ್ತಬಹುದು.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -87,7 +117,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01,top: size.height*0.01),
                                       child:
-                                          Text(language == 'English' ? '• Limit stair use to once or twice a day for the first one to two weeks. ':'• ಮೊದಲ ಒಂದರಿಂದ ಎರಡು ವಾರಗಳವರೆಗೆ ದಿನಕ್ಕೆ ಒಂದು ಅಥವಾ ಎರಡು ಬಾರಿ ಮೆಟ್ಟಿಲುಗಳ ಬಳಕೆಯನ್ನು ಮಿತಿಗೊಳಿಸಿ.',
+                                          Text(language? '• Limit stair use to once or twice a day for the first one to two weeks. ':'• ಮೊದಲ ಒಂದರಿಂದ ಎರಡು ವಾರಗಳವರೆಗೆ ದಿನಕ್ಕೆ ಒಂದು ಅಥವಾ ಎರಡು ಬಾರಿ ಮೆಟ್ಟಿಲುಗಳ ಬಳಕೆಯನ್ನು ಮಿತಿಗೊಳಿಸಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -101,7 +131,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01,top: size.height*0.01),
                                       child:
-                                          Text(language == 'English' ? '• Take one step at a time, pause every 3 to 4 steps to take deep breaths. ':'• ಆಳವಾದ ಉಸಿರನ್ನು ತೆಗೆದುಕೊಳ್ಳಲು ಪ್ರತಿ 3 ರಿಂದ 4 ಹಂತಗಳನ್ನು ವಿರಾಮಗೊಳಿಸಿ, ಒಂದು ಸಮಯದಲ್ಲಿ ಒಂದು ಹೆಜ್ಜೆ ತೆಗೆದುಕೊಳ್ಳಿ.',
+                                          Text(language? '• Take one step at a time, pause every 3 to 4 steps to take deep breaths. ':'• ಆಳವಾದ ಉಸಿರನ್ನು ತೆಗೆದುಕೊಳ್ಳಲು ಪ್ರತಿ 3 ರಿಂದ 4 ಹಂತಗಳನ್ನು ವಿರಾಮಗೊಳಿಸಿ, ಒಂದು ಸಮಯದಲ್ಲಿ ಒಂದು ಹೆಜ್ಜೆ ತೆಗೆದುಕೊಳ್ಳಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -115,7 +145,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01),
                                       child:
-                                          Text(language == 'English' ? '• Go slowly at first.':'• ಮೊದಲಿಗೆ ನಿಧಾನವಾಗಿ ಹೋಗಿ.',
+                                          Text(language? '• Go slowly at first.':'• ಮೊದಲಿಗೆ ನಿಧಾನವಾಗಿ ಹೋಗಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -129,7 +159,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01),
                                       child:
-                                          Text(language == 'English' ? '• If you have short of breath as you climb, stop, rest, and then continue. ':'• ನೀವು ಏರುವಾಗ ನಿಮಗೆ ಉಸಿರಾಟದ ತೊಂದರೆ ಇದ್ದರೆ, ನಿಲ್ಲಿಸಿ, ವಿಶ್ರಾಂತಿ ಮಾಡಿ ಮತ್ತು ನಂತರ ಮುಂದುವರಿಸಿ.',
+                                          Text(language? '• If you have short of breath as you climb, stop, rest, and then continue. ':'• ನೀವು ಏರುವಾಗ ನಿಮಗೆ ಉಸಿರಾಟದ ತೊಂದರೆ ಇದ್ದರೆ, ನಿಲ್ಲಿಸಿ, ವಿಶ್ರಾಂತಿ ಮಾಡಿ ಮತ್ತು ನಂತರ ಮುಂದುವರಿಸಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -143,7 +173,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01),
                                       child:
-                                          Text(language == 'English' ? '• Do not pull up the stairs.':'• ಮೆಟ್ಟಿಲುಗಳನ್ನು ಎಳೆಯಬೇಡಿ.',
+                                          Text(language? '• Do not pull up the stairs.':'• ಮೆಟ್ಟಿಲುಗಳನ್ನು ಎಳೆಯಬೇಡಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -157,7 +187,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01),
                                       child:
-                                          Text(language == 'English' ? '• Use the stair railing only for balance.':'• ಸಮತೋಲನಕ್ಕಾಗಿ ಮಾತ್ರ ಮೆಟ್ಟಿಲು ಕಂಬಿಗಳನ್ನು ಬಳಸಿ.',
+                                          Text(language? '• Use the stair railing only for balance.':'• ಸಮತೋಲನಕ್ಕಾಗಿ ಮಾತ್ರ ಮೆಟ್ಟಿಲು ಕಂಬಿಗಳನ್ನು ಬಳಸಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,

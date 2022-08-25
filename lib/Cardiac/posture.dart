@@ -1,21 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class Posture extends StatefulWidget {
   static const String id = 'Posture';
-  Posture(@required this.lang);
-  final String lang;
 
   @override
   State<Posture> createState() => _PostureState();
 }
 
 class _PostureState extends State<Posture> {
+  bool language=true;
+
+  void initState(){
+    super.initState();
+    language;
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    late String language = widget.lang;
     return Scaffold(
       backgroundColor: Colors.black,
+      floatingActionButton: SpeedDial(
+        icon: Icons.language,
+        // animatedIcon: AnimatedIcons.menu_close,
+        backgroundColor: Colors.black,
+        children: [
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'English',
+              onTap: (){
+                setState(() {
+                  language = true;
+                });}
+          ),
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'Kannada',
+              onTap: (){
+                setState(() {
+                  language = false;
+                });
+                // print(language);
+              }
+          ),
+        ],
+      ) ,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -47,7 +76,7 @@ class _PostureState extends State<Posture> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(),
-                                        child: Text(language == 'English' ?'POSTURE':'ಭಂಗಿ',
+                                        child: Text(language?'POSTURE':'ಭಂಗಿ',
                                           style: TextStyle(
                                             decoration: TextDecoration.underline,
                                             color: Color(0xFFFFBD58),
@@ -73,7 +102,7 @@ class _PostureState extends State<Posture> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01, top: size.height*0.001),
                                       child:
-                                          Text(language == 'English' ?'• Whether lying down, sitting or walking, be aware of your position. ':'• ಮಲಗಿರುವಾಗ, ಕುಳಿತುಕೊಳ್ಳುವಾಗ ಅಥವಾ ನಡೆಯುವಾಗ, ನಿಮ್ಮ ಸ್ಥಾನದ ಬಗ್ಗೆ ತಿಳಿದಿರಲಿ.',
+                                          Text(language?'• Whether lying down, sitting or walking, be aware of your position. ':'• ಮಲಗಿರುವಾಗ, ಕುಳಿತುಕೊಳ್ಳುವಾಗ ಅಥವಾ ನಡೆಯುವಾಗ, ನಿಮ್ಮ ಸ್ಥಾನದ ಬಗ್ಗೆ ತಿಳಿದಿರಲಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -87,7 +116,7 @@ class _PostureState extends State<Posture> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01,top: size.height*0.01),
                                       child:
-                                          Text(language == 'English' ?'• Sit with the head up and straight back.':'• ತಲೆಯನ್ನು ಮೇಲಕ್ಕೆತ್ತಿ ನೇರವಾಗಿ ಹಿಂದಕ್ಕೆ ಇಟ್ಟು ಕುಳಿತುಕೊಳ್ಳಿ.',
+                                          Text(language?'• Sit with the head up and straight back.':'• ತಲೆಯನ್ನು ಮೇಲಕ್ಕೆತ್ತಿ ನೇರವಾಗಿ ಹಿಂದಕ್ಕೆ ಇಟ್ಟು ಕುಳಿತುಕೊಳ್ಳಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,

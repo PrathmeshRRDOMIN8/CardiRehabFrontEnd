@@ -1,21 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class Rest extends StatefulWidget {
   static const String id = 'Rest';
-  Rest(@required this.lang);
-  final String lang;
 
   @override
   State<Rest> createState() => _RestState();
 }
 
 class _RestState extends State<Rest> {
+  bool language=true;
+
+  void initState(){
+    super.initState();
+    language;
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    late String language = widget.lang;
     return Scaffold(
       backgroundColor: Colors.black,
+      floatingActionButton: SpeedDial(
+        icon: Icons.language,
+        // animatedIcon: AnimatedIcons.menu_close,
+        backgroundColor: Colors.black,
+        children: [
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'English',
+              onTap: (){
+                setState(() {
+                  language = true;
+                });}
+          ),
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'Kannada',
+              onTap: (){
+                setState(() {
+                  language = false;
+                });
+                // print(language);
+              }
+          ),
+        ],
+      ) ,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -47,7 +76,7 @@ class _RestState extends State<Rest> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsets.only(),
-                                        child: Text(language == 'English' ? 'REST':'ಉಳಿದ',
+                                        child: Text(language? 'REST':'ಉಳಿದ',
                                           style: TextStyle(
                                             decoration: TextDecoration.underline,
                                             color: Color(0xFFFFBD58),

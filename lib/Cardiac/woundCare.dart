@@ -1,21 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class WoundCare extends StatefulWidget {
   static const String id = 'Wound care';
-  WoundCare(@required this.lang);
-  final String lang;
-
   @override
   State<WoundCare> createState() => _WoundCareState();
 }
 
 class _WoundCareState extends State<WoundCare> {
+  bool language=true;
+
+  void initState(){
+    super.initState();
+    language;
+  }
   @override
   Widget build(BuildContext context) {
-    late String language = widget.lang;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.black,
+      floatingActionButton: SpeedDial(
+        icon: Icons.language,
+        // animatedIcon: AnimatedIcons.menu_close,
+        backgroundColor: Colors.black,
+        children: [
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'English',
+              onTap: (){
+                setState(() {
+                  language = true;
+                });}
+          ),
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'Kannada',
+              onTap: (){
+                setState(() {
+                  language = false;
+                });
+                // print(language);
+              }
+          ),
+        ],
+      ) ,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -48,7 +76,7 @@ class _WoundCareState extends State<WoundCare> {
                                     children:[
                                       Padding(
                                         padding: EdgeInsets.only(),
-                                        child: Text(language == 'English'?'WOUND CARE':'ಗಾಯದ ಕಾಳಜಿ',
+                                        child: Text(language?'WOUND CARE':'ಗಾಯದ ಕಾಳಜಿ',
                                           style: TextStyle(
                                             decoration: TextDecoration.underline,
                                             color: Color(0xFFFFBD58),
@@ -73,7 +101,7 @@ class _WoundCareState extends State<WoundCare> {
                                     ),
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01, top: size.height*0.001),
-                                      child: Text(language == 'English'?'• Before touching the incision site wash hands with soap and water to prevent infection of the incision site.': '• ಛೇದನದ ಸ್ಥಳವನ್ನು ಸ್ಪರ್ಶಿಸುವ ಮೊದಲು, ಛೇದನದ ಸ್ಥಳದ ಸೋಂಕನ್ನು ತಡೆಗಟ್ಟಲು ಸೋಪ್ ಮತ್ತು ನೀರಿನಿಂದ ಕೈಗಳನ್ನು ತೊಳೆಯಿರಿ.',
+                                      child: Text(language?'• Before touching the incision site wash hands with soap and water to prevent infection of the incision site.': '• ಛೇದನದ ಸ್ಥಳವನ್ನು ಸ್ಪರ್ಶಿಸುವ ಮೊದಲು, ಛೇದನದ ಸ್ಥಳದ ಸೋಂಕನ್ನು ತಡೆಗಟ್ಟಲು ಸೋಪ್ ಮತ್ತು ನೀರಿನಿಂದ ಕೈಗಳನ್ನು ತೊಳೆಯಿರಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -86,7 +114,7 @@ class _WoundCareState extends State<WoundCare> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01,top: size.height*0.01),
                                       child:
-                                          Text(language == 'English'?'• Usually there is no drainage from the incision site. Do not cover the bandage with bandage. If discharge present call the surgeon. Keep the incision site clean and dry.': '• ಸಾಮಾನ್ಯವಾಗಿ ಛೇದನದ ಸ್ಥಳದಿಂದ ಯಾವುದೇ ಒಳಚರಂಡಿ ಇಲ್ಲ. ಬ್ಯಾಂಡೇಜ್ನೊಂದಿಗೆ ಬ್ಯಾಂಡೇಜ್ ಅನ್ನು ಮುಚ್ಚಬೇಡಿ. ಡಿಸ್ಚಾರ್ಜ್ ಇದ್ದರೆ ಶಸ್ತ್ರಚಿಕಿತ್ಸಕನನ್ನು ಕರೆ ಮಾಡಿ. ಛೇದನದ ಸ್ಥಳವನ್ನು ಸ್ವಚ್ಛವಾಗಿ ಮತ್ತು ಒಣಗಿಸಿ.',
+                                          Text(language? '• Usually there is no drainage from the incision site. Do not cover the bandage with bandage. If discharge present call the surgeon. Keep the incision site clean and dry.': '• ಸಾಮಾನ್ಯವಾಗಿ ಛೇದನದ ಸ್ಥಳದಿಂದ ಯಾವುದೇ ಒಳಚರಂಡಿ ಇಲ್ಲ. ಬ್ಯಾಂಡೇಜ್ನೊಂದಿಗೆ ಬ್ಯಾಂಡೇಜ್ ಅನ್ನು ಮುಚ್ಚಬೇಡಿ. ಡಿಸ್ಚಾರ್ಜ್ ಇದ್ದರೆ ಶಸ್ತ್ರಚಿಕಿತ್ಸಕನನ್ನು ಕರೆ ಮಾಡಿ. ಛೇದನದ ಸ್ಥಳವನ್ನು ಸ್ವಚ್ಛವಾಗಿ ಮತ್ತು ಒಣಗಿಸಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -100,7 +128,7 @@ class _WoundCareState extends State<WoundCare> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01),
                                       child:
-                                          Text(language == 'English'?'• During healing of incision site it is normal to feel itching numbness and tingling.':'• ಛೇದನದ ಸ್ಥಳವನ್ನು ಗುಣಪಡಿಸುವಾಗ ತುರಿಕೆ ಮರಗಟ್ಟುವಿಕೆ ಮತ್ತು ಜುಮ್ಮೆನಿಸುವಿಕೆ ಅನುಭವಿಸುವುದು ಸಹಜ.',
+                                          Text(language?'• During healing of incision site it is normal to feel itching numbness and tingling.':'• ಛೇದನದ ಸ್ಥಳವನ್ನು ಗುಣಪಡಿಸುವಾಗ ತುರಿಕೆ ಮರಗಟ್ಟುವಿಕೆ ಮತ್ತು ಜುಮ್ಮೆನಿಸುವಿಕೆ ಅನುಭವಿಸುವುದು ಸಹಜ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,
@@ -114,7 +142,7 @@ class _WoundCareState extends State<WoundCare> {
                                     Padding(
                                       padding: EdgeInsets.only(right: size.width*0.01),
                                       child:
-                                          Text(language == 'English'?'• Check for symptoms of infection in the chest incision.':'• ಎದೆಯ ಛೇದನದಲ್ಲಿ ಸೋಂಕಿನ ಲಕ್ಷಣಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.',
+                                          Text(language?'• Check for symptoms of infection in the chest incision.':'• ಎದೆಯ ಛೇದನದಲ್ಲಿ ಸೋಂಕಿನ ಲಕ್ಷಣಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 20,

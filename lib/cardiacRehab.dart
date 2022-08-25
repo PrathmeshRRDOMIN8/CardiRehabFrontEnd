@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CardiacRehab extends StatefulWidget {
-  CardiacRehab({required this.actName, required this.imageAdd,required this.id,required this.language});
+  CardiacRehab({required this.actName, required this.imageAdd,required this.id});
   final String imageAdd;
   final String actName;
   final String id;
-  final String language;
 
   @override
   State<CardiacRehab> createState() => _CardiacRehabState();
@@ -14,8 +13,7 @@ class CardiacRehab extends StatefulWidget {
 class _CardiacRehabState extends State<CardiacRehab> {
   _nextPage(String routeName){
     setState(()=>{
-      Navigator.pushNamed(context, routeName,arguments: {
-        'language' : widget.language})
+      Navigator.pushNamed(context, routeName)
     });
   }
   @override

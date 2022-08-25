@@ -1,21 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class Smoking extends StatefulWidget {
   static const String id = 'Smoking cessation';
-  Smoking(@required this.lang);
-  final String lang;
+
 
   @override
   State<Smoking> createState() => _SmokingState();
 }
 
 class _SmokingState extends State<Smoking> {
+  bool language=true;
+
+  void initState(){
+    super.initState();
+    language;
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    late String language = widget.lang;
     return Scaffold(
       backgroundColor: Colors.black,
+      floatingActionButton: SpeedDial(
+        icon: Icons.language,
+        // animatedIcon: AnimatedIcons.menu_close,
+        backgroundColor: Colors.black,
+        children: [
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'English',
+              onTap: (){
+                setState(() {
+                  language = true;
+                });}
+          ),
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'Kannada',
+              onTap: (){
+                setState(() {
+                  language = false;
+                });
+                // print(language);
+              }
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -47,7 +77,7 @@ class _SmokingState extends State<Smoking> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsets.only(),
-                                      child: Text(language == 'English' ?'STOP SMOKING':'ಧೂಮಪಾನ ನಿಲ್ಲಿಸಿ',
+                                      child: Text(language?'STOP SMOKING':'ಧೂಮಪಾನ ನಿಲ್ಲಿಸಿ',
                                         style: TextStyle(
                                           decoration: TextDecoration.underline,
                                           color: Color(0xFFFFBD58),
@@ -73,7 +103,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01, top: size.height*0.001),
                                     child:
-                                    Text(language == 'English' ?'Smoking contributes directly to coronary artery disease and the heart attack by damaging artery walls and stopping smoking can rapidly reduce these risks.':'ಧೂಮಪಾನವು ಪರಿಧಮನಿಯ ಕಾಯಿಲೆಗೆ ನೇರವಾಗಿ ಕೊಡುಗೆ ನೀಡುತ್ತದೆ ಮತ್ತು ಹೃದಯಾಘಾತವು ಅಪಧಮನಿ ಗೋಡೆಗಳನ್ನು ಹಾನಿಗೊಳಿಸುತ್ತದೆ ಮತ್ತು ಧೂಮಪಾನವನ್ನು ನಿಲ್ಲಿಸುವುದರಿಂದ ಈ ಅಪಾಯಗಳನ್ನು ತ್ವರಿತವಾಗಿ ಕಡಿಮೆ ಮಾಡುತ್ತದೆ',
+                                    Text(language?'Smoking contributes directly to coronary artery disease and the heart attack by damaging artery walls and stopping smoking can rapidly reduce these risks.':'ಧೂಮಪಾನವು ಪರಿಧಮನಿಯ ಕಾಯಿಲೆಗೆ ನೇರವಾಗಿ ಕೊಡುಗೆ ನೀಡುತ್ತದೆ ಮತ್ತು ಹೃದಯಾಘಾತವು ಅಪಧಮನಿ ಗೋಡೆಗಳನ್ನು ಹಾನಿಗೊಳಿಸುತ್ತದೆ ಮತ್ತು ಧೂಮಪಾನವನ್ನು ನಿಲ್ಲಿಸುವುದರಿಂದ ಈ ಅಪಾಯಗಳನ್ನು ತ್ವರಿತವಾಗಿ ಕಡಿಮೆ ಮಾಡುತ್ತದೆ',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -91,7 +121,7 @@ class _SmokingState extends State<Smoking> {
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.only(),
-                                          child: Text(language == 'English' ?'How to quit smoking: ':'ಧೂಮಪಾನವನ್ನು ತೊರೆಯುವುದು ಹೇಗೆ: ',
+                                          child: Text(language?'How to quit smoking: ':'ಧೂಮಪಾನವನ್ನು ತೊರೆಯುವುದು ಹೇಗೆ: ',
                                             style: TextStyle(
                                               decoration: TextDecoration.underline,
                                               color: Color(0xFFFFBD58),
@@ -108,7 +138,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01, top: size.height*0.001),
                                     child:
-                                    Text(language == 'English' ?'Many smokers might have tried to quit in the past and were unsuccessful.  Following are some suggestions to help improve your confidence in quit smoking:':'ಅನೇಕ ಧೂಮಪಾನಿಗಳು ಹಿಂದೆ ಬಿಡಲು ಪ್ರಯತ್ನಿಸಿದರು ಮತ್ತು ವಿಫಲರಾಗಿದ್ದರು. ಧೂಮಪಾನವನ್ನು ತೊರೆಯುವಲ್ಲಿ ನಿಮ್ಮ ವಿಶ್ವಾಸವನ್ನು ಸುಧಾರಿಸಲು ಸಹಾಯ ಮಾಡುವ ಕೆಲವು ಸಲಹೆಗಳು ಇಲ್ಲಿವೆ:',
+                                    Text(language?'Many smokers might have tried to quit in the past and were unsuccessful.  Following are some suggestions to help improve your confidence in quit smoking:':'ಅನೇಕ ಧೂಮಪಾನಿಗಳು ಹಿಂದೆ ಬಿಡಲು ಪ್ರಯತ್ನಿಸಿದರು ಮತ್ತು ವಿಫಲರಾಗಿದ್ದರು. ಧೂಮಪಾನವನ್ನು ತೊರೆಯುವಲ್ಲಿ ನಿಮ್ಮ ವಿಶ್ವಾಸವನ್ನು ಸುಧಾರಿಸಲು ಸಹಾಯ ಮಾಡುವ ಕೆಲವು ಸಲಹೆಗಳು ಇಲ್ಲಿವೆ:',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -122,7 +152,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'1) Try to being smoke free and quit smoking for a day, then 2, and so on.':'1) ಧೂಮಪಾನ ಮುಕ್ತವಾಗಿರಲು ಪ್ರಯತ್ನಿಸಿ ಮತ್ತು ಒಂದು ದಿನದವರೆಗೆ ಧೂಮಪಾನವನ್ನು ತ್ಯಜಿಸಿ, ನಂತರ 2, ಇತ್ಯಾದಿ.',
+                                    Text(language?'1) Try to being smoke free and quit smoking for a day, then 2, and so on.':'1) ಧೂಮಪಾನ ಮುಕ್ತವಾಗಿರಲು ಪ್ರಯತ್ನಿಸಿ ಮತ್ತು ಒಂದು ದಿನದವರೆಗೆ ಧೂಮಪಾನವನ್ನು ತ್ಯಜಿಸಿ, ನಂತರ 2, ಇತ್ಯಾದಿ.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -136,7 +166,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'2) Observe the person who quit smoking recently and try to follow their behaviours.':'2) ಇತ್ತೀಚೆಗೆ ಧೂಮಪಾನವನ್ನು ತ್ಯಜಿಸಿದ ವ್ಯಕ್ತಿಯನ್ನು ಗಮನಿಸಿ ಮತ್ತು ಅವರ ನಡವಳಿಕೆಯನ್ನು ಅನುಸರಿಸಲು ಪ್ರಯತ್ನಿಸಿ.',
+                                    Text(language?'2) Observe the person who quit smoking recently and try to follow their behaviours.':'2) ಇತ್ತೀಚೆಗೆ ಧೂಮಪಾನವನ್ನು ತ್ಯಜಿಸಿದ ವ್ಯಕ್ತಿಯನ್ನು ಗಮನಿಸಿ ಮತ್ತು ಅವರ ನಡವಳಿಕೆಯನ್ನು ಅನುಸರಿಸಲು ಪ್ರಯತ್ನಿಸಿ.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -150,7 +180,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'3) Improve your negative mood towards quitting and follow a healthy lifestyle by exercising, eating well and getting enough sleep.':'3) ವ್ಯಾಯಾಮ, ಚೆನ್ನಾಗಿ ತಿನ್ನುವುದು ಮತ್ತು ಸಾಕಷ್ಟು ನಿದ್ದೆ ಮಾಡುವ ಮೂಲಕ ಆರೋಗ್ಯಕರ ಜೀವನಶೈಲಿಯನ್ನು ತ್ಯಜಿಸುವ ಕಡೆಗೆ ನಿಮ್ಮ ನಕಾರಾತ್ಮಕ ಮನಸ್ಥಿತಿಯನ್ನು ಸುಧಾರಿಸಿ.',
+                                    Text(language?'3) Improve your negative mood towards quitting and follow a healthy lifestyle by exercising, eating well and getting enough sleep.':'3) ವ್ಯಾಯಾಮ, ಚೆನ್ನಾಗಿ ತಿನ್ನುವುದು ಮತ್ತು ಸಾಕಷ್ಟು ನಿದ್ದೆ ಮಾಡುವ ಮೂಲಕ ಆರೋಗ್ಯಕರ ಜೀವನಶೈಲಿಯನ್ನು ತ್ಯಜಿಸುವ ಕಡೆಗೆ ನಿಮ್ಮ ನಕಾರಾತ್ಮಕ ಮನಸ್ಥಿತಿಯನ್ನು ಸುಧಾರಿಸಿ.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -164,7 +194,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'4) Motivate yourself to quit smoking by achieving short quit period and that keeps you focused to achieve your goal.':'4) ಕಡಿಮೆ ಅವಧಿಯನ್ನು ಸಾಧಿಸುವ ಮೂಲಕ ಧೂಮಪಾನವನ್ನು ತ್ಯಜಿಸಲು ನಿಮ್ಮನ್ನು ಪ್ರೇರೇಪಿಸಿ ಮತ್ತು ಅದು ನಿಮ್ಮ ಗುರಿಯನ್ನು ಸಾಧಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಂದ್ರೀಕರಿಸುತ್ತದೆ.',
+                                    Text(language?'4) Motivate yourself to quit smoking by achieving short quit period and that keeps you focused to achieve your goal.':'4) ಕಡಿಮೆ ಅವಧಿಯನ್ನು ಸಾಧಿಸುವ ಮೂಲಕ ಧೂಮಪಾನವನ್ನು ತ್ಯಜಿಸಲು ನಿಮ್ಮನ್ನು ಪ್ರೇರೇಪಿಸಿ ಮತ್ತು ಅದು ನಿಮ್ಮ ಗುರಿಯನ್ನು ಸಾಧಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಂದ್ರೀಕರಿಸುತ್ತದೆ.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -178,7 +208,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'5) Share your goal to quit smoking with friends, family, and co-workers. ': '5) ಸ್ನೇಹಿತರು, ಕುಟುಂಬ ಮತ್ತು ಸಹೋದ್ಯೋಗಿಗಳೊಂದಿಗೆ ಧೂಮಪಾನವನ್ನು ತೊರೆಯುವ ನಿಮ್ಮ ಗುರಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ.',
+                                    Text(language?'5) Share your goal to quit smoking with friends, family, and co-workers. ': '5) ಸ್ನೇಹಿತರು, ಕುಟುಂಬ ಮತ್ತು ಸಹೋದ್ಯೋಗಿಗಳೊಂದಿಗೆ ಧೂಮಪಾನವನ್ನು ತೊರೆಯುವ ನಿಮ್ಮ ಗುರಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -192,7 +222,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'6) Anticipate smoking the triggers and challenges.':'6) ಧೂಮಪಾನದ ಪ್ರಚೋದಕಗಳು ಮತ್ತು ಸವಾಲುಗಳನ್ನು ನಿರೀಕ್ಷಿಸಿ.',
+                                    Text(language?'6) Anticipate smoking the triggers and challenges.':'6) ಧೂಮಪಾನದ ಪ್ರಚೋದಕಗಳು ಮತ್ತು ಸವಾಲುಗಳನ್ನು ನಿರೀಕ್ಷಿಸಿ.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -206,7 +236,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'7) Avoid tobacco products that triggers smoking from your environment.':'7) ನಿಮ್ಮ ಪರಿಸರದಿಂದ ಧೂಮಪಾನವನ್ನು ಪ್ರಚೋದಿಸುವ ತಂಬಾಕು ಉತ್ಪನ್ನಗಳನ್ನು ತಪ್ಪಿಸಿ.',
+                                    Text(language?'7) Avoid tobacco products that triggers smoking from your environment.':'7) ನಿಮ್ಮ ಪರಿಸರದಿಂದ ಧೂಮಪಾನವನ್ನು ಪ್ರಚೋದಿಸುವ ತಂಬಾಕು ಉತ್ಪನ್ನಗಳನ್ನು ತಪ್ಪಿಸಿ.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -220,7 +250,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'8) Breathe deeply: Relax yourself by doing deep breathing exercises when you urged to smoke.':'8) ಆಳವಾಗಿ ಉಸಿರಾಡಿ: ನೀವು ಧೂಮಪಾನ ಮಾಡಲು ಒತ್ತಾಯಿಸಿದಾಗ ಆಳವಾದ ಉಸಿರಾಟದ ವ್ಯಾಯಾಮಗಳನ್ನು ಮಾಡುವ ಮೂಲಕ ವಿಶ್ರಾಂತಿ ಪಡೆಯಿರಿ.',
+                                    Text(language?'8) Breathe deeply: Relax yourself by doing deep breathing exercises when you urged to smoke.':'8) ಆಳವಾಗಿ ಉಸಿರಾಡಿ: ನೀವು ಧೂಮಪಾನ ಮಾಡಲು ಒತ್ತಾಯಿಸಿದಾಗ ಆಳವಾದ ಉಸಿರಾಟದ ವ್ಯಾಯಾಮಗಳನ್ನು ಮಾಡುವ ಮೂಲಕ ವಿಶ್ರಾಂತಿ ಪಡೆಯಿರಿ.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -234,7 +264,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'9) Engage in other hobbies to distract yourself from smoking such as listen to music, go for a walk,or watch TV.':'9) ಧೂಮಪಾನದಿಂದ ನಿಮ್ಮ ಗಮನವನ್ನು ಬೇರೆಡೆಗೆ ಸೆಳೆಯಲು ಇತರ ಹವ್ಯಾಸಗಳಲ್ಲಿ ತೊಡಗಿಸಿಕೊಳ್ಳಿ ಉದಾಹರಣೆಗೆ ಸಂಗೀತವನ್ನು ಆಲಿಸಿ, ವಾಕ್ ಮಾಡಲು ಅಥವಾ ಟಿವಿ ವೀಕ್ಷಿಸಲು.',
+                                    Text(language?'9) Engage in other hobbies to distract yourself from smoking such as listen to music, go for a walk,or watch TV.':'9) ಧೂಮಪಾನದಿಂದ ನಿಮ್ಮ ಗಮನವನ್ನು ಬೇರೆಡೆಗೆ ಸೆಳೆಯಲು ಇತರ ಹವ್ಯಾಸಗಳಲ್ಲಿ ತೊಡಗಿಸಿಕೊಳ್ಳಿ ಉದಾಹರಣೆಗೆ ಸಂಗೀತವನ್ನು ಆಲಿಸಿ, ವಾಕ್ ಮಾಡಲು ಅಥವಾ ಟಿವಿ ವೀಕ್ಷಿಸಲು.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -248,7 +278,7 @@ class _SmokingState extends State<Smoking> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'10)	Maintaining a healthy life style can manage the withdrawal symptoms.': '10) ಆರೋಗ್ಯಕರ ಜೀವನಶೈಲಿಯನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳುವುದು ವಾಪಸಾತಿ ರೋಗಲಕ್ಷಣಗಳನ್ನು ನಿರ್ವಹಿಸಬಹುದು.',
+                                    Text(language?'10)	Maintaining a healthy life style can manage the withdrawal symptoms.': '10) ಆರೋಗ್ಯಕರ ಜೀವನಶೈಲಿಯನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳುವುದು ವಾಪಸಾತಿ ರೋಗಲಕ್ಷಣಗಳನ್ನು ನಿರ್ವಹಿಸಬಹುದು.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,

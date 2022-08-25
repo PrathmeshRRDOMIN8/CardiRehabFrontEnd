@@ -1,21 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class ControllingCholesterol extends StatefulWidget {
   static const String id = 'Controlling cholesterol';
-  ControllingCholesterol(@required this.lang);
-  final String lang;
 
   @override
   State<ControllingCholesterol> createState() => _ControllingCholesterolState();
 }
 
 class _ControllingCholesterolState extends State<ControllingCholesterol> {
+  bool language=true;
+
+  void initState(){
+    super.initState();
+    language;
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    late String language = widget.lang;
     return Scaffold(
       backgroundColor: Colors.black,
+      floatingActionButton: SpeedDial(
+        icon: Icons.language,
+        // animatedIcon: AnimatedIcons.menu_close,
+        backgroundColor: Colors.black,
+        children: [
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'English',
+              onTap: (){
+                setState(() {
+                  language = true;
+                });}
+          ),
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'Kannada',
+              onTap: (){
+                setState(() {
+                  language = false;
+                });
+                // print(language);
+              }
+          ),
+        ],
+      ) ,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -47,7 +76,7 @@ class _ControllingCholesterolState extends State<ControllingCholesterol> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsets.only(),
-                                      child: Text(language == 'English' ? 'Control the Cholesterol:': 'ಕೊಲೆಸ್ಟ್ರಾಲ್ ಅನ್ನು ನಿಯಂತ್ರಿಸಿ',
+                                      child: Text(language? 'Control the Cholesterol:': 'ಕೊಲೆಸ್ಟ್ರಾಲ್ ಅನ್ನು ನಿಯಂತ್ರಿಸಿ',
                                         style: TextStyle(
                                           decoration: TextDecoration.underline,
                                           color: Color(0xFFFFBD58),
@@ -73,7 +102,7 @@ class _ControllingCholesterolState extends State<ControllingCholesterol> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01, top: size.height*0.001),
                                     child:
-                                    Text(language == 'English' ?'• Be aware of the cholesterol levels ':'ಕೊಲೆಸ್ಟ್ರಾಲ್ ಮಟ್ಟಗಳ ಬಗ್ಗೆ ತಿಳಿದಿರಲಿ',
+                                    Text(language?'• Be aware of the cholesterol levels ':'ಕೊಲೆಸ್ಟ್ರಾಲ್ ಮಟ್ಟಗಳ ಬಗ್ಗೆ ತಿಳಿದಿರಲಿ',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -87,7 +116,7 @@ class _ControllingCholesterolState extends State<ControllingCholesterol> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01, top: size.height*0.001),
                                     child:
-                                    Text(language == 'English' ?'• Follow the diet low in fat content':'ಕಡಿಮೆ ಕೊಬ್ಬಿನಂಶವಿರುವ ಆಹಾರವನ್ನು ಅನುಸರಿಸಿ',
+                                    Text(language?'• Follow the diet low in fat content':'ಕಡಿಮೆ ಕೊಬ್ಬಿನಂಶವಿರುವ ಆಹಾರವನ್ನು ಅನುಸರಿಸಿ',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -101,7 +130,7 @@ class _ControllingCholesterolState extends State<ControllingCholesterol> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'• Achieve a healthy body weight and maintain the same weight':'ಆರೋಗ್ಯಕರ ದೇಹದ ತೂಕವನ್ನು ಸಾಧಿಸಿ ಮತ್ತು ಅದೇ ತೂಕವನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳಿ',
+                                    Text(language?'• Achieve a healthy body weight and maintain the same weight':'ಆರೋಗ್ಯಕರ ದೇಹದ ತೂಕವನ್ನು ಸಾಧಿಸಿ ಮತ್ತು ಅದೇ ತೂಕವನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳಿ',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -115,7 +144,7 @@ class _ControllingCholesterolState extends State<ControllingCholesterol> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'• Quit smoking, if you smoke ':'ನೀವು ಧೂಮಪಾನ ಮಾಡುತ್ತಿದ್ದರೆ, ಧೂಮಪಾನವನ್ನು ತ್ಯಜಿಸಿ',
+                                    Text(language?'• Quit smoking, if you smoke ':'ನೀವು ಧೂಮಪಾನ ಮಾಡುತ್ತಿದ್ದರೆ, ಧೂಮಪಾನವನ್ನು ತ್ಯಜಿಸಿ',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -129,7 +158,7 @@ class _ControllingCholesterolState extends State<ControllingCholesterol> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'• Follow exercise regimen daily':'ಪ್ರತಿದಿನ ವ್ಯಾಯಾಮ ಕಟ್ಟುಪಾಡುಗಳನ್ನು ಅನುಸರಿಸಿ.',
+                                    Text(language?'• Follow exercise regimen daily':'ಪ್ರತಿದಿನ ವ್ಯಾಯಾಮ ಕಟ್ಟುಪಾಡುಗಳನ್ನು ಅನುಸರಿಸಿ.',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,
@@ -143,7 +172,7 @@ class _ControllingCholesterolState extends State<ControllingCholesterol> {
                                   Padding(
                                     padding: EdgeInsets.only(right: size.width*0.01),
                                     child:
-                                    Text(language == 'English' ?'• Take the cholesterol medications as prescribed by the doctor':'ವೈದ್ಯರು ಸೂಚಿಸಿದಂತೆ ಕೊಲೆಸ್ಟ್ರಾಲ್ ಔಷಧಿಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ',
+                                    Text(language?'• Take the cholesterol medications as prescribed by the doctor':'ವೈದ್ಯರು ಸೂಚಿಸಿದಂತೆ ಕೊಲೆಸ್ಟ್ರಾಲ್ ಔಷಧಿಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 20,

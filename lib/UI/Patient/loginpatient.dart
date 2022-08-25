@@ -8,9 +8,6 @@ import 'package:kmc_medical_app/UI/Patient/detailsdivision.dart';
 
 
 class LoginPatient extends StatefulWidget {
-
-  LoginPatient({required this.language});
-  String language;
   @override
   State<LoginPatient> createState() => _LoginPatientState();
 }
@@ -19,7 +16,6 @@ class _LoginPatientState extends State<LoginPatient> {
   TextEditingController emailcontroller=TextEditingController();
   TextEditingController passwordcontroller=TextEditingController();
   String ?patient_id;
-  late String lang = widget.language;
   String url=PROD_URL+"/user/loginuser";
 
 
@@ -42,7 +38,7 @@ class _LoginPatientState extends State<LoginPatient> {
 
       if(response.statusCode==200){
 
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>DetailDivision(patient_id!,lang)));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>DetailDivision(patient_id!)));
 
       }
 
