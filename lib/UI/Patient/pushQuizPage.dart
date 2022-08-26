@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 import '../../Static/url.dart';
 
@@ -14,7 +16,20 @@ class PushQuizPage extends StatefulWidget {
   State<PushQuizPage> createState() => _PushQuizPageState();
 }
 
+
 class _PushQuizPageState extends State<PushQuizPage> {
+
+  void ToastMessage(){
+    Fluttertoast.showToast(
+        msg:"Please fill the necessary details",
+      backgroundColor: Colors.grey,
+      toastLength: Toast.LENGTH_LONG,
+      gravity: ToastGravity.BOTTOM,
+      textColor: Colors.white,
+      fontSize: 16.0,
+    );
+
+  }
   late String patient_id=widget.patient_id;
   String ?dropdownvalue1;
   String ?dropdownvalue2;
@@ -24,8 +39,14 @@ class _PushQuizPageState extends State<PushQuizPage> {
   TextEditingController item2=TextEditingController();
   int currentStep = 0;
   int index = 0;
+
+  void initState(){
+    super.initState();
+    ToastMessage();
+  }
   @override
   Widget build(BuildContext context) {
+
     String url=PROD_URL+"/user/${patient_id}/addhealthdata";
 
 
@@ -53,6 +74,21 @@ class _PushQuizPageState extends State<PushQuizPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Stepper(
+         controlsBuilder: (BuildContext context,ControlsDetails controls){
+           return Row(
+             children: <Widget>[
+               TextButton(
+                 onPressed: controls.onStepContinue,
+                 child: (currentStep==3)?Text('SUBMIT'):Text('NEXT'),
+               ),
+               TextButton(
+                 onPressed: controls.onStepCancel,
+                 child: (currentStep==0)?Text('CANCEL'):Text('GO BACK'),
+               ),
+             ],
+           );
+
+         },
 
           physics: ScrollPhysics(),
           type: StepperType.vertical,
@@ -61,12 +97,14 @@ class _PushQuizPageState extends State<PushQuizPage> {
             if(currentStep>=0&&currentStep<3) {
               setState(() => currentStep += 1);
             }
-            else if(currentStep==3){
+             if(currentStep==4){
               setState(()=>{
                 postdata(),
                 Navigator.of(context).pop(),
               });
             }
+
+
           },
           onStepCancel: () {
             if(currentStep!=0) {
