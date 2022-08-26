@@ -20,7 +20,7 @@ class _MedicationsState extends State<Medications> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       floatingActionButton: SpeedDial(
         icon: Icons.language,
         // animatedIcon: AnimatedIcons.menu_close,
@@ -104,7 +104,7 @@ class _MedicationsState extends State<Medications> {
                                       child:
                                           Text(language?'• Take your medicine every day at the same time.':'• ನಿಮ್ಮ ಔಷಧಿಯನ್ನು ಪ್ರತಿದಿನ ಒಂದೇ ಸಮಯದಲ್ಲಿ ತೆಗೆದುಕೊಳ್ಳಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -118,7 +118,7 @@ class _MedicationsState extends State<Medications> {
                                       child:
                                           Text(language?'• Request people close to you to help remind you.':'• ನಿಮಗೆ ನೆನಪಿಸಲು ಸಹಾಯ ಮಾಡಲು ನಿಮ್ಮ ಹತ್ತಿರವಿರುವ ಜನರನ್ನು ವಿನಂತಿಸಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -132,7 +132,7 @@ class _MedicationsState extends State<Medications> {
                                       child:
                                           Text(language?'• Keep your medicines away from light, heat, and moisture. ':'• ನಿಮ್ಮ ಔಷಧಿಗಳನ್ನು ಬೆಳಕು, ಶಾಖ ಮತ್ತು ತೇವಾಂಶದಿಂದ ದೂರವಿಡಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -146,7 +146,7 @@ class _MedicationsState extends State<Medications> {
                                       child:
                                           Text(language?'• Never stop your medications without surgeons advice.':'• ಶಸ್ತ್ರಚಿಕಿತ್ಸಕರ ಸಲಹೆಯಿಲ್ಲದೆ ನಿಮ್ಮ ಔಷಧಿಗಳನ್ನು ಎಂದಿಗೂ ನಿಲ್ಲಿಸಬೇಡಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -160,7 +160,7 @@ class _MedicationsState extends State<Medications> {
                                       child:
                                           Text(language?'• Ask for your surgeons’ advice before splitting or crushing tablets. ':'• ಮಾತ್ರೆಗಳನ್ನು ವಿಭಜಿಸುವ ಅಥವಾ ಪುಡಿಮಾಡುವ ಮೊದಲು ನಿಮ್ಮ ಶಸ್ತ್ರಚಿಕಿತ್ಸಕರ ಸಲಹೆಯನ್ನು ಕೇಳಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -174,7 +174,7 @@ class _MedicationsState extends State<Medications> {
                                       child:
                                           Text(language?'• Do not share your medicines with anybody else. ':'• ನಿಮ್ಮ ಔಷಧಿಗಳನ್ನು ಬೇರೆಯವರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಬೇಡಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -188,7 +188,7 @@ class _MedicationsState extends State<Medications> {
                                       child:
                                           Text(language?'• Ask your surgeon before buying the counter medications':'• ಕೌಂಟರ್ ಔಷಧಿಗಳನ್ನು ಖರೀದಿಸುವ ಮೊದಲು ನಿಮ್ಮ ಶಸ್ತ್ರಚಿಕಿತ್ಸಕರನ್ನು ಕೇಳಿ',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,

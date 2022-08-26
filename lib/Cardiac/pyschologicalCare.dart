@@ -20,7 +20,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       floatingActionButton: SpeedDial(
         icon: Icons.language,
         // animatedIcon: AnimatedIcons.menu_close,
@@ -117,7 +117,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• It is common to feel depressed, anxious after bypass surgery. About 40% people suffer due to these symptoms. '
                                           : 'ಬೈಪಾಸ್ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಯ ನಂತರ ಖಿನ್ನತೆಗೆ ಒಳಗಾಗುವುದು, ಆತಂಕವನ್ನು ಅನುಭವಿಸುವುದು ಸಾಮಾನ್ಯವಾಗಿದೆ. ಸುಮಾರು 40% ಜನರು ಈ ರೋಗಲಕ್ಷಣಗಳಿಂದ ಬಳಲುತ್ತಿದ್ದಾರೆ.',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -135,7 +135,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• Recognize what causes you stress '
                                           : 'ನಿಮ್ಮ ಒತ್ತಡಕ್ಕೆ ಕಾರಣವೇನು ಎಂಬುದನ್ನು ಗುರುತಿಸಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -152,7 +152,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• Breathing and relaxation exercises helps to reduce your stress.'
                                           : 'ಉಸಿರಾಟ ಮತ್ತು ವಿಶ್ರಾಂತಿ ವ್ಯಾಯಾಮಗಳು ನಿಮ್ಮ ಒತ್ತಡವನ್ನು ಕಡಿಮೆ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -169,7 +169,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• Follow exercise regimen daily to help reduce the effects of stress'
                                           : 'ಒತ್ತಡದ ಪರಿಣಾಮಗಳನ್ನು ಕಡಿಮೆ ಮಾಡಲು ಪ್ರತಿದಿನ ವ್ಯಾಯಾಮ ಕಟ್ಟುಪಾಡುಗಳನ್ನು ಅನುಸರಿಸಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -186,7 +186,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• Do more pleasant activities like reading a funny book.'
                                           : 'ತಮಾಷೆಯ ಪುಸ್ತಕವನ್ನು ಓದುವಂತಹ ಹೆಚ್ಚು ಆಹ್ಲಾದಕರ ಚಟುವಟಿಕೆಗಳನ್ನು ಮಾಡಿ.',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -203,7 +203,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• See scenes that are relaxing the mind.'
                                           : 'ಮನಸ್ಸನ್ನು ರಿಲ್ಯಾಕ್ಸ್ ಮಾಡುವ ದೃಶ್ಯಗಳನ್ನು ನೋಡಿ.',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -220,7 +220,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• Divert your mind from the thoughts that contribute to the anxiety (e.g., count backwards from 100)'
                                           : 'ಆತಂಕಕ್ಕೆ ಕಾರಣವಾಗುವ ಆಲೋಚನೆಗಳಿಂದ ನಿಮ್ಮ ಮನಸ್ಸನ್ನು ಬೇರೆಡೆಗೆ ತಿರುಗಿಸಿ (ಉದಾ., 100 ರಿಂದ ಹಿಂದಕ್ಕೆ ಎಣಿಸಿ)',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -237,7 +237,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• Speak to your family or friends about your fear and anxiety.'
                                           : 'ನಿಮ್ಮ ಭಯ ಮತ್ತು ಆತಂಕದ ಬಗ್ಗೆ ನಿಮ್ಮ ಕುಟುಂಬ ಅಥವಾ ಸ್ನೇಹಿತರೊಂದಿಗೆ ಮಾತನಾಡಿ.',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -254,7 +254,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• Music helps to manage stress, enhance memory, and promote wellness. Listen to the music.'
                                           : 'ಸಂಗೀತವು ಒತ್ತಡವನ್ನು ನಿರ್ವಹಿಸಲು, ಸ್ಮರಣೆಯನ್ನು ಹೆಚ್ಚಿಸಲು ಮತ್ತು ಕ್ಷೇಮವನ್ನು ಉತ್ತೇಜಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಸಂಗೀತವನ್ನು ಆಲಿಸಿ.',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -271,7 +271,7 @@ class _PsychologicalCareState extends State<PsychologicalCare> {
                                           ? '• Feeling anxious or sad common after major surgery. Don’t feel shame.'
                                           : 'ಪ್ರಮುಖ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆಯ ನಂತರ ಸಾಮಾನ್ಯವಾಗಿ ಆತಂಕ ಅಥವಾ ದುಃಖದ ಭಾವನೆ. ಅವಮಾನ ಅನುಭವಿಸಬೇಡಿ.',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,

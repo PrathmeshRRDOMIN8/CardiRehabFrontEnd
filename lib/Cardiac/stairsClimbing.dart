@@ -20,7 +20,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       floatingActionButton: SpeedDial(
         icon: Icons.language,
         // animatedIcon: AnimatedIcons.menu_close,
@@ -105,7 +105,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                       child:
                                           Text(language? '• You may climb stairs. ':'• ನೀವು ಮೆಟ್ಟಿಲುಗಳನ್ನು ಹತ್ತಬಹುದು.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -119,7 +119,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                       child:
                                           Text(language? '• Limit stair use to once or twice a day for the first one to two weeks. ':'• ಮೊದಲ ಒಂದರಿಂದ ಎರಡು ವಾರಗಳವರೆಗೆ ದಿನಕ್ಕೆ ಒಂದು ಅಥವಾ ಎರಡು ಬಾರಿ ಮೆಟ್ಟಿಲುಗಳ ಬಳಕೆಯನ್ನು ಮಿತಿಗೊಳಿಸಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -133,7 +133,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                       child:
                                           Text(language? '• Take one step at a time, pause every 3 to 4 steps to take deep breaths. ':'• ಆಳವಾದ ಉಸಿರನ್ನು ತೆಗೆದುಕೊಳ್ಳಲು ಪ್ರತಿ 3 ರಿಂದ 4 ಹಂತಗಳನ್ನು ವಿರಾಮಗೊಳಿಸಿ, ಒಂದು ಸಮಯದಲ್ಲಿ ಒಂದು ಹೆಜ್ಜೆ ತೆಗೆದುಕೊಳ್ಳಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -147,7 +147,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                       child:
                                           Text(language? '• Go slowly at first.':'• ಮೊದಲಿಗೆ ನಿಧಾನವಾಗಿ ಹೋಗಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -161,7 +161,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                       child:
                                           Text(language? '• If you have short of breath as you climb, stop, rest, and then continue. ':'• ನೀವು ಏರುವಾಗ ನಿಮಗೆ ಉಸಿರಾಟದ ತೊಂದರೆ ಇದ್ದರೆ, ನಿಲ್ಲಿಸಿ, ವಿಶ್ರಾಂತಿ ಮಾಡಿ ಮತ್ತು ನಂತರ ಮುಂದುವರಿಸಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -175,7 +175,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                       child:
                                           Text(language? '• Do not pull up the stairs.':'• ಮೆಟ್ಟಿಲುಗಳನ್ನು ಎಳೆಯಬೇಡಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -189,7 +189,7 @@ class _StairsClimbingState extends State<StairsClimbing> {
                                       child:
                                           Text(language? '• Use the stair railing only for balance.':'• ಸಮತೋಲನಕ್ಕಾಗಿ ಮಾತ್ರ ಮೆಟ್ಟಿಲು ಕಂಬಿಗಳನ್ನು ಬಳಸಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,

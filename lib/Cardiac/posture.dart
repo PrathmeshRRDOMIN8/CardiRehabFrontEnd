@@ -19,7 +19,7 @@ class _PostureState extends State<Posture> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       floatingActionButton: SpeedDial(
         icon: Icons.language,
         // animatedIcon: AnimatedIcons.menu_close,
@@ -104,7 +104,7 @@ class _PostureState extends State<Posture> {
                                       child:
                                           Text(language?'• Whether lying down, sitting or walking, be aware of your position. ':'• ಮಲಗಿರುವಾಗ, ಕುಳಿತುಕೊಳ್ಳುವಾಗ ಅಥವಾ ನಡೆಯುವಾಗ, ನಿಮ್ಮ ಸ್ಥಾನದ ಬಗ್ಗೆ ತಿಳಿದಿರಲಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -118,7 +118,7 @@ class _PostureState extends State<Posture> {
                                       child:
                                           Text(language?'• Sit with the head up and straight back.':'• ತಲೆಯನ್ನು ಮೇಲಕ್ಕೆತ್ತಿ ನೇರವಾಗಿ ಹಿಂದಕ್ಕೆ ಇಟ್ಟು ಕುಳಿತುಕೊಳ್ಳಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,

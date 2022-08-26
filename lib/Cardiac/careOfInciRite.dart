@@ -23,7 +23,7 @@ class _CareOfInciRiteState extends State<CareOfInciRite> {
       floatingActionButton: SpeedDial(
         icon: Icons.language,
         // animatedIcon: AnimatedIcons.menu_close,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         children: [
           SpeedDialChild(
             child: Icon(Icons.language),
@@ -108,7 +108,7 @@ class _CareOfInciRiteState extends State<CareOfInciRite> {
                                     children: [
                                       Text(language?'Care of incision site: you might have an incision on centre of the chest.': 'ಛೇದನದ ಸ್ಥಳದ ಆರೈಕೆ: ನೀವು ಎದೆಯ ಮಧ್ಯಭಾಗದಲ್ಲಿ ಛೇದನವನ್ನು ಹೊಂದಿರಬಹುದು.',
                                         style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 22
                                         ),
                                         textAlign: TextAlign.center,),
@@ -117,7 +117,7 @@ class _CareOfInciRiteState extends State<CareOfInciRite> {
                                       ),
                                       Text(language? 'Check for the signs of infection in the incision site Those signs includes: ': 'ಛೇದನದ ಸ್ಥಳದಲ್ಲಿ ಸೋಂಕಿನ ಚಿಹ್ನೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ ಆ ಚಿಹ್ನೆಗಳು ಸೇರಿವೆ.',
                                         style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 22
                                         ),
                                         textAlign: TextAlign.center,),
@@ -128,7 +128,7 @@ class _CareOfInciRiteState extends State<CareOfInciRite> {
                                         padding: EdgeInsets.only(right: size.width*0.01, top: size.height*0.001),
                                         child:Text(language? '• Increased discharge from incision.': '• ಛೇದನದಿಂದ ಹೆಚ್ಚಿದ ವಿಸರ್ಜನೆ',
                                           style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 20,
                                           ),
                                           textAlign: TextAlign.center,),
@@ -140,7 +140,7 @@ class _CareOfInciRiteState extends State<CareOfInciRite> {
                                         padding: EdgeInsets.only(right: size.width*0.01,top: size.height*0.01),
                                         child: Text(language ? '• The incision line might be open. ': '• ಛೇದನದ ರೇಖೆಯು ತೆರೆದಿರಬಹುದು',
                                           style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 20,
                                           ),
                                           textAlign: TextAlign.center,),
@@ -152,7 +152,7 @@ class _CareOfInciRiteState extends State<CareOfInciRite> {
                                         padding: EdgeInsets.only(right: size.width*0.01,top: size.height*0.01),
                                         child: Text(language? '• The colour changes in the incision site such as redness.': '• ಕೆಂಪು ಬಣ್ಣದಂತೆ ಛೇದನದ ಸ್ಥಳದಲ್ಲಿ ಬಣ್ಣವು ಬದಲಾಗುತ್ತದೆ.',
                                           style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 20,
                                           ),
                                           textAlign: TextAlign.center,
@@ -165,7 +165,7 @@ class _CareOfInciRiteState extends State<CareOfInciRite> {
                                         padding: EdgeInsets.only(right: size.width*0.01),
                                         child: Text(language ? '• The incision line may feel warm.': '• ಛೇದನದ ರೇಖೆಯು ಬೆಚ್ಚಗಿರುತ್ತದೆ.',
                                           style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 20,
                                           ),
                                           textAlign: TextAlign.center,
@@ -178,7 +178,7 @@ class _CareOfInciRiteState extends State<CareOfInciRite> {
                                         padding: EdgeInsets.only(right: size.width*0.01),
                                         child: Text(language ? '• Fever, worsening incision pain rapid the heart rate, or bleeding from the wound.': '• ಜ್ವರ, ಹದಗೆಡುತ್ತಿರುವ ಛೇದನದ ನೋವು ಹೃದಯ ಬಡಿತವನ್ನು ವೇಗಗೊಳಿಸುತ್ತದೆ ಅಥವಾ ಗಾಯದಿಂದ ರಕ್ತಸ್ರಾವವಾಗುತ್ತದೆ.',
                                           style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 20,
                                           ),
                                           textAlign: TextAlign.center,

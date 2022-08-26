@@ -19,7 +19,7 @@ class _ControlBloodPressureState extends State<ControlBloodPressure> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       floatingActionButton: SpeedDial(
         icon: Icons.language,
         // animatedIcon: AnimatedIcons.menu_close,
@@ -104,7 +104,7 @@ class _ControlBloodPressureState extends State<ControlBloodPressure> {
                                     child:
                                     Text(language? '• Follow the diet planning .':'ಆಹಾರ ಯೋಜನೆಯನ್ನು ಅನುಸರಿಸಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -118,7 +118,7 @@ class _ControlBloodPressureState extends State<ControlBloodPressure> {
                                     child:
                                     Text(language?'• Achieve a healthy body weight and maintain the same weight':'ಆರೋಗ್ಯಕರ ದೇಹದ ತೂಕವನ್ನು ಸಾಧಿಸಿ ಮತ್ತು ಅದೇ ತೂಕವನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -132,7 +132,7 @@ class _ControlBloodPressureState extends State<ControlBloodPressure> {
                                     child:
                                     Text(language?'• Follow exercise regimen daily.':'ಪ್ರತಿದಿನ ವ್ಯಾಯಾಮ ಕಟ್ಟುಪಾಡುಗಳನ್ನು ಅನುಸರಿಸಿ.',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -146,7 +146,7 @@ class _ControlBloodPressureState extends State<ControlBloodPressure> {
                                     child:
                                     Text(language?'• Take the medications as prescribed':'ಸೂಚಿಸಿದಂತೆ ಔಷಧಿಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -160,7 +160,7 @@ class _ControlBloodPressureState extends State<ControlBloodPressure> {
                                     child:
                                     Text(language? '• Quit smoking if you smoke':'ನೀವು ಧೂಮಪಾನ ಮಾಡುತ್ತಿದ್ದರೆ ಧೂಮಪಾನವನ್ನು ತ್ಯಜಿಸಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,

@@ -18,7 +18,7 @@ class _BathingState extends State<Bathing> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       floatingActionButton: SpeedDial(
         icon: Icons.language,
         // animatedIcon: AnimatedIcons.menu_close,
@@ -103,7 +103,7 @@ class _BathingState extends State<Bathing> {
                                         child:
                                         Text(language?'• Take sponge bath till sutures are removed, that is, first week after discharge. Then regular bath can be continued.':'• ಹೊಲಿಗೆಗಳನ್ನು ತೆಗೆಯುವವರೆಗೆ ಸ್ಪಾಂಜ್ ಬಾತ್ ತೆಗೆದುಕೊಳ್ಳಿ, ಅಂದರೆ ಡಿಸ್ಚಾರ್ಜ್ ಆದ ಮೊದಲ ವಾರ. ನಂತರ ನಿಯಮಿತ ಸ್ನಾನವನ್ನು ಮುಂದುವರಿಸಬಹುದು.',
                                           style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 20,
                                           ),
                                           textAlign: TextAlign.center,
@@ -117,7 +117,7 @@ class _BathingState extends State<Bathing> {
                                         child:
                                         Text(language?'• Take bath daily. Bath to the back. The water should not directly hit the chest.': '• ಪ್ರತಿದಿನ ಸ್ನಾನ ಮಾಡಿ. ಹಿಂಭಾಗಕ್ಕೆ ಸ್ನಾನ. ನೀರು ನೇರವಾಗಿ ಎದೆಗೆ ಹೊಡೆಯಬಾರದು.',
                                           style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 20,
                                           ),
                                           textAlign: TextAlign.center,
@@ -131,7 +131,7 @@ class _BathingState extends State<Bathing> {
                                         child:
                                         Text(language?'• The water temperature should not too hot or cold.':'• ನೀರಿನ ತಾಪಮಾನವು ತುಂಬಾ ಬಿಸಿಯಾಗಿರಬಾರದು ಅಥವಾ ತಂಪಾಗಿರಬಾರದು.',
                                           style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 20,
                                           ),
                                           textAlign: TextAlign.center,
@@ -146,7 +146,7 @@ class _BathingState extends State<Bathing> {
                                         child:
                                             Text(language?'• Wash the incision with soap and water to cleanse the site. Wet the hand with soap water and gently wash the incision using up and down motions. Avoid scrubbing them.':'• ಸೈಟ್ ಅನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸಲು ಸೋಪ್ ಮತ್ತು ನೀರಿನಿಂದ ಛೇದನವನ್ನು ತೊಳೆಯಿರಿ. ಕೈಯನ್ನು ಸಾಬೂನಿನಿಂದ ಒದ್ದೆ ಮಾಡಿ ಮತ್ತು ಮೇಲಕ್ಕೆ ಮತ್ತು ಕೆಳಕ್ಕೆ ಚಲನೆಯನ್ನು ಬಳಸಿ ಛೇದನವನ್ನು ನಿಧಾನವಾಗಿ ತೊಳೆಯಿರಿ. ಅವುಗಳನ್ನು ಸ್ಕ್ರಬ್ ಮಾಡುವುದನ್ನು ತಪ್ಪಿಸಿ.',
                                               style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.black,
                                                 fontSize: 20,
                                               ),
                                               textAlign: TextAlign.center,
@@ -160,7 +160,7 @@ class _BathingState extends State<Bathing> {
                                         child:
                                             Text(language?'•	Pat the skin gently to dry by clean cloth':'• ಸ್ವಚ್ಛವಾದ ಬಟ್ಟೆಯಿಂದ ಚರ್ಮವನ್ನು ಒಣಗಿಸಲು ನಿಧಾನವಾಗಿ ಪ್ಯಾಟ್ ಮಾಡಿ',
                                               style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.black,
                                                 fontSize: 20,
                                               ),
                                               textAlign: TextAlign.center,
@@ -174,7 +174,7 @@ class _BathingState extends State<Bathing> {
                                         child:
                                             Text(language?'•	Don’t apply anything to the incision unless advised by the surgeon':'• ಶಸ್ತ್ರಚಿಕಿತ್ಸಕರಿಂದ ಸಲಹೆ ನೀಡದ ಹೊರತು ಛೇದನಕ್ಕೆ ಏನನ್ನೂ ಅನ್ವಯಿಸಬೇಡಿ',
                                               style: TextStyle(
-                                                color: Colors.white,
+                                                color: Colors.black,
                                                 fontSize: 20,
                                               ),
                                               textAlign: TextAlign.center,

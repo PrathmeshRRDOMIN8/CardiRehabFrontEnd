@@ -20,7 +20,7 @@ class _BloodSugarLevelState extends State<BloodSugarLevel> {
     Size size = MediaQuery.of(context).size;
     
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       floatingActionButton: SpeedDial(
         icon: Icons.language,
         // animatedIcon: AnimatedIcons.menu_close,
@@ -105,7 +105,7 @@ class _BloodSugarLevelState extends State<BloodSugarLevel> {
                                     child:
                                     Text(language? '• Take the medications as prescribed  ':'ಸೂಚಿಸಿದಂತೆ ಔಷಧಿಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -119,7 +119,7 @@ class _BloodSugarLevelState extends State<BloodSugarLevel> {
                                     child:
                                     Text(language?'• Monitor and keep track of the blood sugars ':'ರಕ್ತದ ಸಕ್ಕರೆಯನ್ನು ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡಿ ಮತ್ತು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -133,7 +133,7 @@ class _BloodSugarLevelState extends State<BloodSugarLevel> {
                                     child:
                                     Text(language?'• Follow the specified diet for diabetes':'ಮಧುಮೇಹಕ್ಕೆ ನಿಗದಿತ ಆಹಾರವನ್ನು ಅನುಸರಿಸಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -147,7 +147,7 @@ class _BloodSugarLevelState extends State<BloodSugarLevel> {
                                     child:
                                     Text(language?'• Achieve a healthy body weight and maintain the same weight':'ಆರೋಗ್ಯಕರ ದೇಹದ ತೂಕವನ್ನು ಸಾಧಿಸಿ ಮತ್ತು ಅದೇ ತೂಕವನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -161,7 +161,7 @@ class _BloodSugarLevelState extends State<BloodSugarLevel> {
                                     child:
                                     Text(language?'• Follow exercise regimen daily':'ಪ್ರತಿದಿನ ವ್ಯಾಯಾಮ ಕಟ್ಟುಪಾಡುಗಳನ್ನು ಅನುಸರಿಸಿ.',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,
@@ -175,7 +175,7 @@ class _BloodSugarLevelState extends State<BloodSugarLevel> {
                                     child:
                                     Text(language?'• Take the anti-diabetic medications as prescribed by the doctor regularly':'ವೈದ್ಯರು ಸೂಚಿಸಿದಂತೆ ಮಧುಮೇಹ ವಿರೋಧಿ ಔಷಧಿಗಳನ್ನು ನಿಯಮಿತವಾಗಿ ತೆಗೆದುಕೊಳ್ಳಿ',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       textAlign: TextAlign.center,

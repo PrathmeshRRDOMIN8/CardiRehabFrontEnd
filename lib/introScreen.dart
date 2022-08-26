@@ -97,11 +97,7 @@ class _IntroScreenState extends State<IntroScreen> {
                 ),
             SizedBox(height: size.height*0.02,),
             Text("Made with ❤️ by ",style: TextStyle(color: Colors.grey)),
-
                         Text( "Apple Developers' Group,Manipal",style: TextStyle(fontWeight: FontWeight.bold)),
-
-
-
 
               ],
             ),

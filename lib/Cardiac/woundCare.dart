@@ -18,7 +18,7 @@ class _WoundCareState extends State<WoundCare> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       floatingActionButton: SpeedDial(
         icon: Icons.language,
         // animatedIcon: AnimatedIcons.menu_close,
@@ -103,7 +103,7 @@ class _WoundCareState extends State<WoundCare> {
                                       padding: EdgeInsets.only(right: size.width*0.01, top: size.height*0.001),
                                       child: Text(language?'• Before touching the incision site wash hands with soap and water to prevent infection of the incision site.': '• ಛೇದನದ ಸ್ಥಳವನ್ನು ಸ್ಪರ್ಶಿಸುವ ಮೊದಲು, ಛೇದನದ ಸ್ಥಳದ ಸೋಂಕನ್ನು ತಡೆಗಟ್ಟಲು ಸೋಪ್ ಮತ್ತು ನೀರಿನಿಂದ ಕೈಗಳನ್ನು ತೊಳೆಯಿರಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                       textAlign: TextAlign.center,),
@@ -116,7 +116,7 @@ class _WoundCareState extends State<WoundCare> {
                                       child:
                                           Text(language? '• Usually there is no drainage from the incision site. Do not cover the bandage with bandage. If discharge present call the surgeon. Keep the incision site clean and dry.': '• ಸಾಮಾನ್ಯವಾಗಿ ಛೇದನದ ಸ್ಥಳದಿಂದ ಯಾವುದೇ ಒಳಚರಂಡಿ ಇಲ್ಲ. ಬ್ಯಾಂಡೇಜ್ನೊಂದಿಗೆ ಬ್ಯಾಂಡೇಜ್ ಅನ್ನು ಮುಚ್ಚಬೇಡಿ. ಡಿಸ್ಚಾರ್ಜ್ ಇದ್ದರೆ ಶಸ್ತ್ರಚಿಕಿತ್ಸಕನನ್ನು ಕರೆ ಮಾಡಿ. ಛೇದನದ ಸ್ಥಳವನ್ನು ಸ್ವಚ್ಛವಾಗಿ ಮತ್ತು ಒಣಗಿಸಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -130,7 +130,7 @@ class _WoundCareState extends State<WoundCare> {
                                       child:
                                           Text(language?'• During healing of incision site it is normal to feel itching numbness and tingling.':'• ಛೇದನದ ಸ್ಥಳವನ್ನು ಗುಣಪಡಿಸುವಾಗ ತುರಿಕೆ ಮರಗಟ್ಟುವಿಕೆ ಮತ್ತು ಜುಮ್ಮೆನಿಸುವಿಕೆ ಅನುಭವಿಸುವುದು ಸಹಜ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
@@ -144,7 +144,7 @@ class _WoundCareState extends State<WoundCare> {
                                       child:
                                           Text(language?'• Check for symptoms of infection in the chest incision.':'• ಎದೆಯ ಛೇದನದಲ್ಲಿ ಸೋಂಕಿನ ಲಕ್ಷಣಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.',
                                             style: TextStyle(
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               fontSize: 20,
                                             ),
                                             textAlign: TextAlign.center,
