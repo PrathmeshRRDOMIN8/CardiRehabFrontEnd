@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 
@@ -40,10 +41,14 @@ class _PushQuizPageState extends State<PushQuizPage> {
   int currentStep = 0;
   int index = 0;
 
+  bool language=true;
+
   void initState(){
     super.initState();
-    ToastMessage();
+    language;
   }
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -72,6 +77,31 @@ class _PushQuizPageState extends State<PushQuizPage> {
       }
     }
     return Scaffold(
+      floatingActionButton: SpeedDial(
+        icon: Icons.language,
+        // animatedIcon: AnimatedIcons.menu_close,
+        backgroundColor: Colors.black,
+        children: [
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'English',
+              onTap: (){
+                setState(() {
+                  language = true;
+                });}
+          ),
+          SpeedDialChild(
+              child: Icon(Icons.language),
+              label: 'Kannada',
+              onTap: (){
+                setState(() {
+                  language = false;
+                });
+                // print(language);
+              }
+          ),
+        ],
+      ) ,
       body: SingleChildScrollView(
         child: Stepper(
          controlsBuilder: (BuildContext context,ControlsDetails controls){
@@ -79,11 +109,11 @@ class _PushQuizPageState extends State<PushQuizPage> {
              children: <Widget>[
                TextButton(
                  onPressed: controls.onStepContinue,
-                 child: (currentStep==3)?Text('SUBMIT'):Text('NEXT'),
+                 child: (currentStep==3)?Text(language?'SUBMIT':'ಸಲ್ಲಿಸು'):Text(language?'NEXT':'ಮುಂದೆ'),
                ),
                TextButton(
                  onPressed: controls.onStepCancel,
-                 child: (currentStep==0)?Text('CANCEL'):Text('GO BACK'),
+                 child: (currentStep==0)?Text(language?'CANCEL':'ರದ್ದುಮಾಡು'):Text(language?'GO BACK':'ಹಿಂದೆ ಹೋಗು'),
                ),
              ],
            );
@@ -97,7 +127,7 @@ class _PushQuizPageState extends State<PushQuizPage> {
             if(currentStep>=0&&currentStep<3) {
               setState(() => currentStep += 1);
             }
-             if(currentStep==4){
+            else if(currentStep==3){
               setState(()=>{
                 postdata(),
                 Navigator.of(context).pop(),
@@ -116,13 +146,13 @@ class _PushQuizPageState extends State<PushQuizPage> {
           },
           steps: <Step>[
             Step(
-                title: Text("How do you rate your Health?"),
+                title: Text(language?"How do you rate your Health?":'ನಿಮ್ಮ ಆರೋಗ್ಯವನ್ನು ನೀವು ಹೇಗೆ ರೇಟ್ ಮಾಡುತ್ತೀರಿ?'),
                 content: Column(
                   children: <Widget>[
                     DropdownButton(
                       style: const TextStyle(color: Colors.black),
                        value: dropdownvalue1,
-                        items: <String>['Likely', 'Average', 'Poor']
+                        items: <String>[language?'Likely':'ಸಾಧ್ಯತೆ', language?'Average':'ಸರಾಸರಿ', language?'Poor':'ಬಡವ']
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
@@ -137,14 +167,14 @@ class _PushQuizPageState extends State<PushQuizPage> {
                   ],
                 )),
             Step(
-              title: Text("Are you following daily Home-Based cardiac rehabiliation advices?",maxLines: 2,),
+              title: Text(language?"Are you following daily Home-Based cardiac rehabiliation advices?":"ನೀವು ದೈನಂದಿನ ಗೃಹಾಧಾರಿತ ಹೃದಯ ಪುನರ್ವಸತಿ ಸಲಹೆಗಳನ್ನು ಅನುಸರಿಸುತ್ತಿರುವಿರಾ?",maxLines: 2,),
               content: Column(
                 children:<Widget> [
                   DropdownButton(
 
                       style: const TextStyle(color: Colors.black),
                       value: dropdownvalue2,
-                      items: <String>['Yes', 'No']
+                      items: <String>[language?'Yes': 'ಹೌದು', language?'No':'ಸಂ']
                           .map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
@@ -161,14 +191,14 @@ class _PushQuizPageState extends State<PushQuizPage> {
               )
             ),
             Step(
-                title: Text("Have you felt any health issues while following the Home-based cardiac rehabilitation advices?",maxLines:3,),
+                title: Text(language?"Have you felt any health issues while following the Home-based cardiac rehabilitation advices?":"ಗೃಹಾಧಾರಿತ ಹೃದಯ ಪುನರ್ವಸತಿ ಸಲಹೆಗಳನ್ನು ಅನುಸರಿಸುವಾಗ ನೀವು ಯಾವುದೇ ಆರೋಗ್ಯ ಸಮಸ್ಯೆಗಳನ್ನು ಅನುಭವಿಸಿದ್ದೀರಾ?",maxLines:3,),
                 content: Column(
                   children:<Widget> [
                     DropdownButton(
 
                         style: const TextStyle(color: Colors.black),
                         value: dropdownvalue3,
-                        items: <String>['Yes', 'No']
+                        items: <String>[language?'Yes': 'ಹೌದು', language?'No':'ಸಂ']
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
@@ -183,11 +213,11 @@ class _PushQuizPageState extends State<PushQuizPage> {
                     TextField(
                       controller: item1,
                       keyboardType: TextInputType.text,
-                      readOnly: (dropdownvalue3=="Yes")?false:true,
+                      readOnly: (dropdownvalue3=="Yes"||dropdownvalue3=="ಹೌದು")?false:true,
 
                       enableInteractiveSelection: true,
                       decoration: InputDecoration(
-                        hintText: (dropdownvalue3=="Yes")?"Please Enter the reason":"Please proceed to next option",
+                        hintText: (dropdownvalue3=="Yes"||dropdownvalue3=="ಹೌದು")?language?"Please Enter the reason":"ದಯವಿಟ್ಟು ಕಾರಣವನ್ನು ನಮೂದಿಸಿ":language?"Please proceed to next option":"ದಯವಿಟ್ಟು ಮುಂದಿನ ಆಯ್ಕೆಗೆ ಮುಂದುವರಿಯಿರಿ",
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),
@@ -197,7 +227,7 @@ class _PushQuizPageState extends State<PushQuizPage> {
                 )
             ),
             Step(
-                title: Text("Do you have any questions/doubts?",maxLines:1,),
+                title: Text(language?"Do you have any questions/doubts?":"ನಿಮಗೆ ಯಾವುದೇ ಪ್ರಶ್ನೆಗಳು/ಅನುಮಾನಗಳಿವೆಯೇ?",maxLines:1,),
                 content: Column(
                   children:<Widget> [
                     DropdownButton(
@@ -219,12 +249,12 @@ class _PushQuizPageState extends State<PushQuizPage> {
                     TextField(
                       controller: item2,
                       keyboardType: TextInputType.text,
-                      readOnly: (dropdownvalue4=="Yes")?false:true,
+                      readOnly: (dropdownvalue3=="Yes"||dropdownvalue3=="ಹೌದು")?false:true,
                       maxLines: 4,
 
                       enableInteractiveSelection: true,
                       decoration: InputDecoration(
-                        hintText: (dropdownvalue4=="Yes")?"Please Enter your Question":"Please proceed to next option",
+                        hintText: (dropdownvalue3=="Yes"||dropdownvalue3=="ಹೌದು")?language?"Please Enter the reason":"ದಯವಿಟ್ಟು ಕಾರಣವನ್ನು ನಮೂದಿಸಿ":language?"Please proceed to next option":"ದಯವಿಟ್ಟು ಮುಂದಿನ ಆಯ್ಕೆಗೆ ಮುಂದುವರಿಯಿರಿ",
                         hintStyle: TextStyle(color: Colors.grey),
 
                       ),
