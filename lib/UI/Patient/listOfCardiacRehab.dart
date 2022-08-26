@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:kmc_medical_app/cardiacRehab.dart';
+import 'package:kmc_medical_app/UI/cardiacRehab.dart';
 import 'package:lottie/lottie.dart';
 import 'package:kmc_medical_app/UI/Patient/detailsdivision.dart';
 import 'package:kmc_medical_app/Cardiac/careOfInciRite.dart';

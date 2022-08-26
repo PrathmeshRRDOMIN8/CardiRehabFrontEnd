@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kmc_medical_app/introScreen.dart';
-import 'package:kmc_medical_app/patientPortal.dart';
+import 'package:kmc_medical_app/UI/introScreen.dart';
+
 import 'package:kmc_medical_app/UI/Patient/detailsdivision.dart';
 import 'package:kmc_medical_app/UI/Patient/listOfCardiacRehab.dart';
 import 'package:kmc_medical_app/UI/Patient/pushQuizPage.dart';

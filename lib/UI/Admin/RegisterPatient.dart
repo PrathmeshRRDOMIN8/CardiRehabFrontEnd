@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../Static/url.dart';
 
@@ -39,6 +40,7 @@ class _RegisterPatientState extends State<RegisterPatient> {
 
 
       if(response.statusCode==200){
+        Fluttertoast.showToast(msg: "Patient has been successfully added");
 
         Navigator.of(context).pop();
 

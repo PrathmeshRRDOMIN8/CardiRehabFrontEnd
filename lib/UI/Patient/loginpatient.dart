@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:kmc_medical_app/Static/url.dart';
 import 'package:kmc_medical_app/UI/Patient/detailsdivision.dart';
 //import 'package:kmc_medical_app/patientPortal.dart';
@@ -37,6 +38,7 @@ class _LoginPatientState extends State<LoginPatient> {
       });
 
       if(response.statusCode==200){
+        Fluttertoast.showToast(msg: "Login Successful");
 
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>DetailDivision(patient_id!)));
 

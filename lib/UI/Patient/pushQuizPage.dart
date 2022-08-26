@@ -20,17 +20,8 @@ class PushQuizPage extends StatefulWidget {
 
 class _PushQuizPageState extends State<PushQuizPage> {
 
-  void ToastMessage(){
-    Fluttertoast.showToast(
-        msg:"Please fill the necessary details",
-      backgroundColor: Colors.grey,
-      toastLength: Toast.LENGTH_LONG,
-      gravity: ToastGravity.BOTTOM,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
 
-  }
+
   late String patient_id=widget.patient_id;
   String ?dropdownvalue1;
   String ?dropdownvalue2;
@@ -130,6 +121,7 @@ class _PushQuizPageState extends State<PushQuizPage> {
             else if(currentStep==3){
               setState(()=>{
                 postdata(),
+                Fluttertoast.showToast(msg: "Form Subitted Successfully\n Please Fill it after 3 days"),
                 Navigator.of(context).pop(),
               });
             }

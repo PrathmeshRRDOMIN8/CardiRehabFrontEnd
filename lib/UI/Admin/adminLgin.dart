@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:kmc_medical_app/Static/url.dart';
 import 'package:kmc_medical_app/UI/Admin/allPatientList.dart';
 import 'package:kmc_medical_app/UI/Patient/detailsdivision.dart';
@@ -41,6 +42,7 @@ class _AdminLoginState extends State<AdminLogin> {
       });
 
       if(response.statusCode==200&&response.data["role"]=="admin"){
+        Fluttertoast.showToast(msg: "Login Successful");
 
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>AllUserList()));
 
