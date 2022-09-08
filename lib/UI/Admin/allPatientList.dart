@@ -16,6 +16,8 @@ class AllUserList extends StatefulWidget {
 
 class _AllUserListState extends State<AllUserList> {
   final url = PROD_URL + "/user/getalluser";
+  var uid;
+
   var _postjson = [];
   TextEditingController searchcontroller = TextEditingController();
 
@@ -52,6 +54,8 @@ class _AllUserListState extends State<AllUserList> {
   //
   //
   // }
+
+
 
   @override
   void initstate() {
@@ -91,27 +95,54 @@ class _AllUserListState extends State<AllUserList> {
                     itemBuilder: (BuildContext context, int index) {
 
                       var user = _postjson[index];
+                      
 
-                      return InkWell(
-                          child: Container(
 
-                            width: MediaQuery.of(context).size.width * 0.472,
-                            height: MediaQuery.of(context).size.height * 0.057,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(22),
-                              color: Colors.purpleAccent,
-                            ),
-                            child: Center(
-                              child: Text(
-                                user["name"],
-                                style: TextStyle(
-                                  color: Colors.white,
+                      return Dismissible(
+                        key: Key(_postjson[index].toString()),
+                        background: Container(
+                          child: Icon(Icons.delete),
+                          color: Colors.red,
+                        ),
+                        onDismissed:(direction)async{
+                          setState(() async{
+                            try {
+                              final response = await delete(Uri.parse(
+                                  PROD_URL+"/user/" +
+                                      user["_id"].toString() + "/delete"));
+                              if (response.statusCode == 200) {
+                                print("Deleted Successfully");
+                              }
+                            }catch(error){
+                              print(error);
+                            }
+                            
+
+                          });
+
+
+                        },
+                        child: InkWell(
+                            child: Container(
+
+                              width: MediaQuery.of(context).size.width * 0.472,
+                              height: MediaQuery.of(context).size.height * 0.057,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(22),
+                                color: Colors.purpleAccent,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  user["name"],
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
-                                textAlign: TextAlign.center,
                               ),
                             ),
-                          ),
-                          onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ViewProfileAdmin(user["_id"].toString())))
+                            onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ViewProfileAdmin(user["_id"].toString())))
+                        ),
                       );
                     },
                     separatorBuilder: (BuildContext context, int index) {
