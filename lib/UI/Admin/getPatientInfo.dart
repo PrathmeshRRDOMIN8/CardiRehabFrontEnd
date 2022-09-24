@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'package:kmc_medical_app/UI/Admin/updateform.dart';
 import 'dart:convert';
 
 import '../../Static/url.dart';
@@ -42,6 +43,15 @@ class _ViewProfileAdminState extends State<ViewProfileAdmin> {
     getpatientdetail();
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        actions: [
+          TextButton(
+              onPressed:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context)=>UpdateForm())),
+              child: Text("Edit"))
+        ],
+        elevation: 0,
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -52,12 +62,8 @@ class _ViewProfileAdminState extends State<ViewProfileAdmin> {
                 padding: EdgeInsets.symmetric(
                     horizontal: MediaQuery.of(context).size.width * 0.02),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.grey,
-                      radius: MediaQuery.of(context).size.height * 0.07,
-                    ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,

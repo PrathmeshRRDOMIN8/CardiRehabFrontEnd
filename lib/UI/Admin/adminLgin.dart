@@ -17,7 +17,7 @@ class AdminLogin extends StatefulWidget {
 }
 
 class _AdminLoginState extends State<AdminLogin> {
-  TextEditingController emailcontroller=TextEditingController();
+  TextEditingController codecontroller=TextEditingController();
   TextEditingController passwordcontroller=TextEditingController();
   String ?patient_id;
 
@@ -27,7 +27,7 @@ class _AdminLoginState extends State<AdminLogin> {
   void postdata() async{
     var dio= Dio();
     var body=jsonEncode({
-      "emailid": emailcontroller.text.toString(),
+      "code_no": codecontroller.text,
       "password": passwordcontroller.text.toString(),
 
     });
@@ -46,6 +46,9 @@ class _AdminLoginState extends State<AdminLogin> {
 
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>AllUserList()));
 
+      }
+      else if(response.statusCode==400){
+        print(response.data["message"]);
       }
 
     }catch(err){
@@ -74,11 +77,11 @@ class _AdminLoginState extends State<AdminLogin> {
                     borderRadius: BorderRadius.circular(29),
                   ),
                   child: TextField(
-                    controller: emailcontroller,
-                    keyboardType: TextInputType.emailAddress,
+                    controller: codecontroller,
+                    keyboardType: TextInputType.number,
                     autofocus: true,
                     decoration: InputDecoration(
-                      icon: Icon(Icons.mail_outline_outlined,
+                      icon: Icon(Icons.code,
                         color: Color(0xFF6F35A5),),
                       hintText: "Enter Username",
                       hintStyle: TextStyle(

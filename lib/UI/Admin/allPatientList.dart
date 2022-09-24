@@ -69,18 +69,9 @@ class _AllUserListState extends State<AllUserList> {
 
     return Scaffold(
 
-      // body: FutureBuilder<List<User>>(
-      //   future: getdata(),
-      //   builder: (context,snapshot) {
-      //     if(snapshot.connectionState==ConnectionState.none&&snapshot.hasData==null){
-      //       return Container(
-      //         child: Text("No internet Connection"),
-      //       );
-      //
-      //     }
-      //     else if (snapshot.hasData) {
-      //       List<User> users=snapshot.data!;
+
       body: Center(
+
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
@@ -101,8 +92,13 @@ class _AllUserListState extends State<AllUserList> {
                       return Dismissible(
                         key: Key(_postjson[index].toString()),
                         background: Container(
+                          padding: EdgeInsets.all(0),
                           child: Icon(Icons.delete),
-                          color: Colors.red,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(22),
+                            color: Colors.red,
+                          ),
+
                         ),
                         onDismissed:(direction)async{
                           setState(() async{
@@ -122,26 +118,28 @@ class _AllUserListState extends State<AllUserList> {
 
 
                         },
-                        child: InkWell(
-                            child: Container(
+                        child: Center(
+                          child: InkWell(
+                              child: Container(
 
-                              width: MediaQuery.of(context).size.width * 0.472,
-                              height: MediaQuery.of(context).size.height * 0.057,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(22),
-                                color: Colors.purpleAccent,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  user["name"],
-                                  style: TextStyle(
-                                    color: Colors.white,
+                                //width: MediaQuery.of(context).size.width * 0.472,
+                                height: MediaQuery.of(context).size.height * 0.057,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(22),
+                                  color: Colors.purpleAccent,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    user["code_no"].toString(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                    textAlign: TextAlign.center,
                                   ),
-                                  textAlign: TextAlign.center,
                                 ),
                               ),
-                            ),
-                            onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ViewProfileAdmin(user["_id"].toString())))
+                              onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ViewProfileAdmin(user["_id"].toString())))
+                          ),
                         ),
                       );
                     },

@@ -14,7 +14,7 @@ class LoginPatient extends StatefulWidget {
 }
 
 class _LoginPatientState extends State<LoginPatient> {
-  TextEditingController emailcontroller=TextEditingController();
+  TextEditingController codecontroller=TextEditingController();
   TextEditingController passwordcontroller=TextEditingController();
   String ?patient_id;
   String url=PROD_URL+"/user/loginuser";
@@ -23,7 +23,7 @@ class _LoginPatientState extends State<LoginPatient> {
   void postdata() async{
     var dio= Dio();
     var body=jsonEncode({
-      "emailid": emailcontroller.text.toString(),
+      "code_no": codecontroller.text,
       "password": passwordcontroller.text.toString(),
 
     });
@@ -71,8 +71,8 @@ class _LoginPatientState extends State<LoginPatient> {
               borderRadius: BorderRadius.circular(29),
             ),
             child: TextField(
-              controller: emailcontroller,
-              keyboardType: TextInputType.emailAddress,
+              controller: codecontroller,
+              keyboardType: TextInputType.number,
               autofocus: true,
               decoration: InputDecoration(
                 icon: Icon(Icons.mail_outline_outlined,
