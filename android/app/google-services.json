@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1086879304565",
+    "project_id": "cardirehab",
+    "storage_bucket": "cardirehab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086879304565:android:4acadcc2be8919faa3e13c",
+        "android_client_info": {
+          "package_name": "com.example.kmc_medical_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086879304565-ninh8sq0pj5mrun9l0gfhpce8v3eipak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfAaPMkjl_dNMsszNIFO-yAGsnKR5WTVI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086879304565-ninh8sq0pj5mrun9l0gfhpce8v3eipak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
