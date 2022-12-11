@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:kmc_medical_app/UI/Admin/updateform.dart';
+import 'package:HyCaRe/UI/Admin/updateform.dart';
 import 'dart:convert';
 
 import '../../Static/url.dart';
@@ -29,6 +29,7 @@ class _ViewProfileAdminState extends State<ViewProfileAdmin> {
       emailid = jsondata['user']['emailid'].toString();
       phoneno = jsondata['user']['phone'].toString();
       reportdetail = jsondata['user']['health_report'] as List;
+
     });
   }
 
@@ -47,7 +48,7 @@ class _ViewProfileAdminState extends State<ViewProfileAdmin> {
         backgroundColor: Colors.white,
         actions: [
           TextButton(
-              onPressed:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context)=>UpdateForm())),
+              onPressed:()=> Navigator.of(context).push(MaterialPageRoute(builder: (context)=>UpdateForm(widget.patient_id))),
               child: Text("Edit"))
         ],
         elevation: 0,
@@ -134,6 +135,11 @@ class _ViewProfileAdminState extends State<ViewProfileAdmin> {
                   final question4 = report['question4'].toString();
                   final question4_response =
                       report['question4_reason'].toString();
+                  final question5 = report['question5'].toString();
+                  final question6 = report['question6'].toString();
+                  final question7 = report['question7'].toString();
+                  final question6_response=report['question6_response'].toString();
+                  final question7_response=report['question7_response'].toString();
 
                   return Container(
                       padding: EdgeInsets.symmetric(
@@ -193,7 +199,7 @@ class _ViewProfileAdminState extends State<ViewProfileAdmin> {
                                   children: [
                                     Text("Question 4"),
                                     Text(
-                                      question4_response,
+                                      question4,
                                       maxLines: 3,
                                     ),
                                   ],
@@ -203,7 +209,47 @@ class _ViewProfileAdminState extends State<ViewProfileAdmin> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text("Question 4 Response"),
-                                    Text(question4),
+                                    Text(question4_response),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Question 5"),
+                                    Text(question5),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Question 6"),
+                                    Text(question6),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Question 6 Response"),
+                                    Text(question6_response),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Question 7"),
+                                    Text(question7),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("Question 7 Time"),
+                                    Text(question7_response),
                                   ],
                                 ),
                               ],

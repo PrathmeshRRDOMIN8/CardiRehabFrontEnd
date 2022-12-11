@@ -1,6 +1,8 @@
+import 'package:HyCaRe/Static/url.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:intl/intl.dart';
 
 import 'dart:convert';
 
@@ -8,13 +10,18 @@ import 'dart:convert';
 
 
 class UpdateForm extends StatefulWidget {
-  const UpdateForm({Key? key}) : super(key: key);
+  String patient_id;
+  UpdateForm(@required this.patient_id);
+
 
   @override
   State<UpdateForm> createState() => _UpdateFormState();
 }
 
 class _UpdateFormState extends State<UpdateForm> {
+
+
+
   TextEditingController namecontroller=TextEditingController();
   TextEditingController emailcontroller=TextEditingController();
   TextEditingController phonecontroller=TextEditingController();
@@ -24,9 +31,10 @@ class _UpdateFormState extends State<UpdateForm> {
   TextEditingController DOadmissioncontroller=TextEditingController();
   TextEditingController DOsurgerycontroller=TextEditingController();
 
-  String url="http://localhost:8000/user/632e845f80fb7356a2b6be5a/updateuser";
 
-  void updatedata() async{
+
+  Future<void> updatedata() async{
+    String url=PROD_URL+"/user/"+widget.patient_id+"/updateuser";
     var dio= Dio();
     var body=jsonEncode({
       "emailid": emailcontroller.text.toString(),
@@ -210,6 +218,27 @@ class _UpdateFormState extends State<UpdateForm> {
                     controller: DOadmissioncontroller,
                     keyboardType: TextInputType.datetime,
                     autofocus: true,
+                    onTap: () async{
+                      DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2020),
+                          //DateTime.now() - not to allow to choose before today.
+                          lastDate: DateTime.now());
+
+                      if (pickedDate != null) {
+                        print(
+                            pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                        String formattedDate =
+                        DateFormat('yyyy-MM-dd').format(pickedDate);
+                        print(
+                            formattedDate); //formatted date output using intl package =>  2021-03-16
+                        setState(() {
+                          DOadmissioncontroller.text =
+                              formattedDate; //set output date to TextField value.
+                        });
+                      } else {}
+                    },
                     decoration: const InputDecoration(
 
                       hintText: "Enter Date of Admission ",
@@ -233,6 +262,27 @@ class _UpdateFormState extends State<UpdateForm> {
                   child: TextField(
                     controller: DOsurgerycontroller,
                     keyboardType: TextInputType.datetime,
+                    onTap: () async{
+                      DateTime? pickedDate = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2020),
+
+                          lastDate: DateTime.now());
+
+                      if (pickedDate != null) {
+                        print(
+                            pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                        String formattedDate =
+                        DateFormat('yyyy-MM-dd').format(pickedDate);
+                        print(
+                            formattedDate); //formatted date output using intl package =>  2021-03-16
+                        setState(() {
+                          DOsurgerycontroller.text =
+                              formattedDate; //set output date to TextField value.
+                        });
+                      } else {}
+                    },
 
                     autofocus: true,
                     decoration: const InputDecoration(

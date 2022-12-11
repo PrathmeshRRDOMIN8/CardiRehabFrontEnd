@@ -1,25 +1,27 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:kmc_medical_app/UI/introScreen.dart';
+import 'package:HyCaRe/UI/introScreen.dart';
+import 'package:flutter/services.dart';
 
-import 'package:kmc_medical_app/UI/Patient/detailsdivision.dart';
-import 'package:kmc_medical_app/UI/Patient/listOfCardiacRehab.dart';
-import 'package:kmc_medical_app/UI/Patient/pushQuizPage.dart';
-import 'package:kmc_medical_app/Cardiac/careOfInciRite.dart';
-import 'package:kmc_medical_app/Cardiac/woundCare.dart';
-import 'package:kmc_medical_app/Cardiac/bathing.dart';
-import 'package:kmc_medical_app/Cardiac/physicalActivity.dart';
-import 'package:kmc_medical_app/Cardiac/rest.dart';
-import 'package:kmc_medical_app/Cardiac/stairsClimbing.dart';
-import 'package:kmc_medical_app/Cardiac/posture.dart';
-import 'package:kmc_medical_app/Cardiac/medications.dart';
-import 'package:kmc_medical_app/Cardiac/exercise.dart';
-import 'package:kmc_medical_app/Cardiac/dietForCABG.dart';
-import 'package:kmc_medical_app/Cardiac/smoking.dart';
-import 'package:kmc_medical_app/Cardiac/controlBloodPressure.dart';
-import 'package:kmc_medical_app/Cardiac/controllingCholesterol.dart';
-import 'package:kmc_medical_app/Cardiac/bloodSugarLevel.dart';
-import 'package:kmc_medical_app/Cardiac/pyschologicalCare.dart';
+
+import 'package:HyCaRe/UI/Patient/detailsdivision.dart';
+import 'package:HyCaRe/UI/Patient/listOfCardiacRehab.dart';
+import 'package:HyCaRe/UI/Patient/pushQuizPage.dart';
+import 'package:HyCaRe/Cardiac/careOfInciRite.dart';
+import 'package:HyCaRe/Cardiac/woundCare.dart';
+import 'package:HyCaRe/Cardiac/bathing.dart';
+import 'package:HyCaRe/Cardiac/physicalActivity.dart';
+import 'package:HyCaRe/Cardiac/rest.dart';
+import 'package:HyCaRe/Cardiac/stairsClimbing.dart';
+import 'package:HyCaRe/Cardiac/posture.dart';
+import 'package:HyCaRe/Cardiac/medications.dart';
+import 'package:HyCaRe/Cardiac/exercise.dart';
+import 'package:HyCaRe/Cardiac/dietForCABG.dart';
+import 'package:HyCaRe/Cardiac/smoking.dart';
+import 'package:HyCaRe/Cardiac/controlBloodPressure.dart';
+import 'package:HyCaRe/Cardiac/controllingCholesterol.dart';
+import 'package:HyCaRe/Cardiac/bloodSugarLevel.dart';
+import 'package:HyCaRe/Cardiac/pyschologicalCare.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
@@ -42,8 +44,14 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 
 Future<void> main() async{
+
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(MyApp()));
+
   await Firebase.initializeApp();
+  final fcmToken = await FirebaseMessaging.instance.getToken();
+  print("fcmToken: ${fcmToken}" );
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   await flutterLocalNotificationsPlugin
       .resolvePlatformSpecificImplementation<

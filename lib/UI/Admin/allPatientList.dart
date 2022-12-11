@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:kmc_medical_app/UI/Admin/RegisterPatient.dart';
-import 'package:kmc_medical_app/UI/Admin/getPatientInfo.dart';
+import 'package:HyCaRe/UI/Admin/RegisterPatient.dart';
+import 'package:HyCaRe/UI/Admin/getPatientInfo.dart';
 
 import '../../Static/url.dart';
 
@@ -55,8 +55,6 @@ class _AllUserListState extends State<AllUserList> {
   //
   // }
 
-
-
   @override
   void initstate() {
     super.initState();
@@ -68,15 +66,11 @@ class _AllUserListState extends State<AllUserList> {
     fetchdata();
 
     return Scaffold(
-
-
       body: Center(
-
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
             children: <Widget>[
-
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.03,
               ),
@@ -84,10 +78,7 @@ class _AllUserListState extends State<AllUserList> {
                 child: ListView.separated(
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) {
-
                       var user = _postjson[index];
-                      
-
 
                       return Dismissible(
                         key: Key(_postjson[index].toString()),
@@ -98,32 +89,59 @@ class _AllUserListState extends State<AllUserList> {
                             borderRadius: BorderRadius.circular(22),
                             color: Colors.red,
                           ),
-
                         ),
-                        onDismissed:(direction)async{
-                          setState(() async{
-                            try {
-                              final response = await delete(Uri.parse(
-                                  PROD_URL+"/user/" +
-                                      user["_id"].toString() + "/delete"));
-                              if (response.statusCode == 200) {
-                                print("Deleted Successfully");
-                              }
-                            }catch(error){
-                              print(error);
-                            }
-                            
+                        onDismissed: (direction) async {
+                          showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                    title: Text(
+                                        "Are you sure you want to delete the Patient Credentials"),
+                                    content: Text(
+                                        "If you confirm, then the patient credentials can't be recovered"),
+                                    actions: <Widget>[
+                                      TextButton(
+                                          onPressed: (){Navigator.of(context).pop();}, child: Text("Cancel")),
+                                      TextButton(
 
-                          });
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: GestureDetector(
+                                          onTap: () async {
+                                            setState(() async {
+                                              try {
+                                                final response = await delete(
+                                                    Uri.parse(PROD_URL +
+                                                        "/user/" +
+                                                        user["_id"].toString() +
+                                                        "/delete"));
+                                                if (response.statusCode ==
+                                                    200) {
 
-
+                                                  print("Deleted Successfully");
+                                                  Navigator.of(context).pop();
+                                                }
+                                              } catch (error) {
+                                                print(error);
+                                              }
+                                            });
+                                          },
+                                          child: Container(
+                                            color: Colors.red,
+                                            padding: const EdgeInsets.all(14),
+                                            child: const Text("Delete"),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ));
                         },
                         child: Center(
                           child: InkWell(
                               child: Container(
-
                                 //width: MediaQuery.of(context).size.width * 0.472,
-                                height: MediaQuery.of(context).size.height * 0.057,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.057,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(22),
                                   color: Colors.purpleAccent,
@@ -138,8 +156,10 @@ class _AllUserListState extends State<AllUserList> {
                                   ),
                                 ),
                               ),
-                              onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ViewProfileAdmin(user["_id"].toString())))
-                          ),
+                              onTap: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => ViewProfileAdmin(
+                                          user["_id"].toString())))),
                         ),
                       );
                     },
@@ -160,12 +180,11 @@ class _AllUserListState extends State<AllUserList> {
       //  return Center(child: CircularProgressIndicator());
       // }
       floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Colors.purpleAccent,
-          onPressed: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>RegisterPatient())),
-          label: Text("+ Add Patient")
-      ),
+          backgroundColor: Colors.purpleAccent,
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => RegisterPatient())),
+          label: Text("+ Add Patient")),
     );
-
 
     //);
   }

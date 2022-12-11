@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:kmc_medical_app/Static/url.dart';
-import 'package:kmc_medical_app/UI/Patient/detailsdivision.dart';
-//import 'package:kmc_medical_app/patientPortal.dart';
+import 'package:HyCaRe/Static/url.dart';
+import 'package:HyCaRe/UI/Patient/detailsdivision.dart';
+//import 'package:HyCaRe/patientPortal.dart';
 
 
 class LoginPatient extends StatefulWidget {
@@ -42,6 +42,9 @@ class _LoginPatientState extends State<LoginPatient> {
 
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>DetailDivision(patient_id!)));
 
+      }
+      else if(response.statusCode==400){
+        Fluttertoast.showToast(msg: "Incorrect Credentials");
       }
 
     }catch(err){

@@ -15,8 +15,9 @@ class RegisterPatient extends StatefulWidget {
 }
 
 class _RegisterPatientState extends State<RegisterPatient> {
+
   TextEditingController namecontroller=TextEditingController();
-  TextEditingController emailcontroller=TextEditingController();
+  TextEditingController codecontroller=TextEditingController();
   TextEditingController phonecontroller=TextEditingController();
   TextEditingController passwordcontroller=TextEditingController();
 
@@ -26,10 +27,10 @@ class _RegisterPatientState extends State<RegisterPatient> {
   void postdata() async{
     var dio= Dio();
     var body=jsonEncode({
-      "emailid": emailcontroller.text.toString(),
+      "code_no": codecontroller.text.toString(),
       "password": passwordcontroller.text.toString(),
       "name":namecontroller.text.toString(),
-      "phone":phonecontroller.text,
+
 
     });
 
@@ -87,6 +88,8 @@ class _RegisterPatientState extends State<RegisterPatient> {
                     ),
                   ),
                 ),
+
+
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 10),
                   padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
@@ -96,38 +99,13 @@ class _RegisterPatientState extends State<RegisterPatient> {
                     borderRadius: BorderRadius.circular(29),
                   ),
                   child: TextField(
-                    controller: phonecontroller,
-                    keyboardType: TextInputType.phone,
-                    autofocus: true,
-                    decoration: const InputDecoration(
-                      icon: Icon(Icons.phone,
-                        color: Color(0xFF6F35A5),),
-                      hintText: "Enter Phone Number",
-                      hintStyle: TextStyle(
-                        color: Colors.grey,
-                      ),
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(vertical: 10),
-                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
-                  width: size.width*0.9,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF1E6FF),
-                    borderRadius: BorderRadius.circular(29),
-                  ),
-                  child: TextField(
-                    controller: emailcontroller,
+                    controller: codecontroller,
                     keyboardType: TextInputType.emailAddress,
                     autofocus: true,
                     decoration: const InputDecoration(
-                      icon: Icon(Icons.mail_outline_outlined,
+                      icon: Icon(Icons.code,
                         color: Color(0xFF6F35A5),),
-                      hintText: "Enter Email ID",
+                      hintText: "Enter Code",
                       hintStyle: TextStyle(
                         color: Colors.grey,
                       ),
@@ -174,7 +152,7 @@ class _RegisterPatientState extends State<RegisterPatient> {
 
                       ),
                       child: const Center(
-                        child: Text("Login",
+                        child: Text("Register",
                           style: TextStyle(
                             color: Colors.white,
                           ),

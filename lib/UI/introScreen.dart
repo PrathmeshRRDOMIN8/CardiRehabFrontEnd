@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:kmc_medical_app/UI/Admin/adminLgin.dart';
-import 'package:kmc_medical_app/UI/Patient/loginpatient.dart';
+import 'package:HyCaRe/UI/Admin/adminLgin.dart';
+import 'package:HyCaRe/UI/Patient/loginpatient.dart';
 import 'package:lottie/lottie.dart';
 
 
